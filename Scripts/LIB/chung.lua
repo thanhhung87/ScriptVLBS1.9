@@ -21,7 +21,7 @@ gl_ChatNham = false
 gl_ChatNhamTimeBreak = os.clock()
 gl_LocDoTheoSet = 1
 gl_LocDoNguHanh = 0
-gl_menuClickSpeed = 300
+gl_menuClickSpeed = 50
 gl_Sleep = 50
 gl_Tien = false
 gl_TienHanhTrang = 0
@@ -34,6 +34,7 @@ gl_filterCount = 0
 preMenuText = ""
 gl_Debug = false
 tbSetDo = {}
+tbSetDoByType = {}
 
 -- option loc do ngu hanh
 dongAn_1 = 1
@@ -401,8 +402,6 @@ function LocDo()
                     for i = 0, 5 do
                         local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
                         if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
-                            
-
                             bFlag = bFlag + 1
                         end
                     end
@@ -497,172 +496,6 @@ function LocDo()
 		timer.Sleep(1000)
 	end
 end
-function LocDoXongBan()
-	if gl_GuiDo == false then
-		nVip = 0
-		nVipOld = 0
-	end
-	
-	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
-		gl_InternetDelay = gl_InternetDelayCatch
-	end
-	
-	if gl_InternetDelay > 3000 then
-		gl_InternetDelay = 3000
-	end
-	
-	timer.Sleep(gl_InternetDelay)
-	
-	local tmpFreeCell = getFreeHanhTrang(false)
-	if tmpFreeCell == nil then
-		return
-	end
-	
-    if gl_Debug then
-        echo("TiÕn hµnh läc ®å!")
-    end
-    
-    -- Buoc 1: Phan loai item - luu do VIP vao bang tam
-    local tbVipItems = {} -- Bang luu thong tin do VIP
-    local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
-    
-    while nIndex ~= 0 do
-        local nGenre = item.GetKey(nIndex)
-        if nPlace == 3 and nGenre == 0 then
-            local bFlag = 0
-            local nDoVip = 0
-            if gl_LocDoTheoSet == 1 then
-                for k1, v1 in pairs(tbSetDo) do
-                    bFlag = 0
-                    for i = 0, 5 do
-                        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                        if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
-                            bFlag = bFlag + 1
-                        end
-                    end
-                    if bFlag == tablelength(v1) then
-                        nDoVip = 1
-                    end
-                end
-            else
-                for i = 0, 5 do
-                    local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                    if 600 >= nValue and tbThuocTinh[nMagicType] ~= nil and nValue >= tbThuocTinh[nMagicType] then
-                        bFlag = bFlag + 1
-                    end
-                end
-                if bFlag < gl_SoDongVip then
-                    nDoVip = 1
-                end
-            end
-			
-			-- loc do 5 hanh
-			if gl_LocDoNguHanh == 1 and nDoVip == 1 then
-				echo("TiÕn hµnh läc ®å ngò hµnh!")
-				local nMagicType2, nValue2 = item.GetMagicAttrib(nIndex, kIndex)
-				if tbNguHanh[dongAn_1] ~= nil and tablelength(tbNguHanh[dongAn_1]) > 0 then
-					local nMagicType, nValue = item.GetMagicAttrib(nIndex, dongAn_1)
-					if tbNguHanh[dongAn_1][nMagicType] == nil then
-						nDoVip = 0
-					end
-				end
-				if tbNguHanh[dongAn_2] ~= nil and tablelength(tbNguHanh[dongAn_2]) > 0 then
-					local nMagicType, nValue = item.GetMagicAttrib(nIndex, dongAn_2)
-					if tbNguHanh[dongAn_2][nMagicType] == nil then
-						nDoVip = 0
-					end
-				end
-				if tbNguHanh[dongAn_3] ~= nil and tablelength(tbNguHanh[dongAn_3]) > 0  then
-					local nMagicType, nValue = item.GetMagicAttrib(nIndex, dongAn_3)
-					if tbNguHanh[dongAn_3][nMagicType] == nil then
-						nDoVip = 0
-					end
-				end
-			end
-			
-            if nDoVip == 0 then
-               -- Ban do rac ngay
-               ShopItem(nIndex)
-            else
-                -- Luu thong tin do VIP vao bang tam
-                table.insert(tbVipItems, {
-                    nIndex = nIndex,
-                    nX = nXLocDo,
-                    nY = nYLocDo
-                })
-                nVip = nVip + 1
-            end
-			itemFiltered = itemFiltered + 1
-        end
-        nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
-    end
-    
-    -- Buoc 2: Sau khi ban het do rac, gui do VIP vao ruong
-    -- if #tbVipItems > 0 then
-    --     for k, vipItem in pairs(tbVipItems) do
-    --         -- Lay lai thong tin item tu vi tri
-    --         local nItemIndex, nItemPlace, nItemX, nItemY = item.GetPos(vipItem.nIndex)
-    --         if nItemPlace == 3 then
-    --             GuiDo(vipItem.nIndex, vipItem.nX, vipItem.nY)
-                
-    --             -- Thong bao chi tiet ve do VIP
-    --             local szItemName = item.GetName(vipItem.nIndex)
-    --             echoRed(line())
-    --             echoGreen(">>> Phat hien ra: " .. szItemName)
-    --             echoRed("-----------------------------------")
-                
-    --             -- Hien thi cac thuoc tinh
-    --             for i = 0, 5 do
-    --                 local nMagicType, nValue = item.GetMagicAttrib(vipItem.nIndex, i)
-    --                 if nMagicType ~= 0 and tbThuocTinhName[nMagicType] ~= nil then
-    --                     local szThuocTinhName = tbThuocTinhName[nMagicType] or "Không rõ"
-    --                     echoGreen("Dòng " .. (i+1) .. ": " .. szThuocTinhName .. " = " .. nValue)
-    --                 end
-    --             end
-    --             echoRed(line())
-    --         end
-    --     end
-    -- end
-    -- if nVip > 0 then
-	-- 	if nVip > nVipOld then			
-	-- 		nVipOld = nVip
-	-- 	end
-	-- 	if gl_ChatNham and (os.time() - gl_VipReportTimeBreak) > 10 then
-	-- 		tbVulanLib.Chat("CH_NEARBY","<bclr=red>Th­a cËu ®· t×m ®­îc " .. nVip .. " mãn VIP ¹! :0")
-	-- 		gl_VipReportTimeBreak = os.time()
-	-- 	end
-		
-    -- end
-	-- --[[
-	-- if os.time() - gl_Time > 300 then
-    --     echoRed(line())
-    --     echoGreen("Auto ChungNguyÔn version " .. chungVersion)
-	-- 	echoGreen("Edit by Hoµng Minh")
-	-- 	echoGreen("Hoµn toµn miÔn phÝ vµ open source!")
-	-- 	echoRed(line())
-    --     --echoDonate()
-    --     gl_Time = os.time()
-    -- end
-	-- --]]
-	-- if os.time() - filterRepordTimeBreak > 600 then
-	-- 	echoRed(line())
-    --     echoGreen("Auto Loc Do VIP")
-	-- 	echoGreen("Edit by LVT Official")
-	-- 	echoGreen("Hoµn toµn miÔn phÝ vµ open source!")
-	-- 	--echoRed(line())
-    --     reportFilter(itemFiltered, nVip)
-    --     filterRepordTimeBreak = os.time()
-    -- end
-	
-    -- echoQuangCao()
-    -- nFreeHanhTrang = getFreeHanhTrang(false)
-	
-	-- neu ruong dang mo thi dong lai
-	-- if box.IsVisible() == 1 then
-	-- 	box.Close()
-	-- 	timer.Sleep(1000)
-	-- end
-end
 
 function reportFilter(itemCount, vipCount)
 	local timeNow = os.date("%H:%M:%S")
@@ -710,7 +543,7 @@ end
 
 function GuiDo(nIndex, nXLocDo, nYLocDo)
     if gl_GuiDo then
-        --echoGreen("TiÕn hµnh cÊt ®å!!!")
+        echoGreen("TiÕn hµnh cÊt ®å!!!")
 		-- nem bo vat pham dang cam tren tay
 		quangItemRaNgoai()
 		
@@ -791,7 +624,17 @@ function GuiDo(nIndex, nXLocDo, nYLocDo)
         end
     end
 end
-
+-- Ham kiem tra item co phai do hoang kim khong
+function IsHoangKimItem(nIndex)
+    local nPrice = item.GetPrice(nIndex)
+    
+    -- Do hoang kim co gia = 49999
+    if nPrice >= 49999 then
+        return true
+    end
+    
+    return false
+end
 function writeThuocTinh()
     echoRed('Ghi toµn bé thuéc tÝnh cã trong hµnh trang ra file')
     local nIndex, nPlace, nX, nY = item.GetFirst()
@@ -872,10 +715,12 @@ function ShopItem(nIndex)
             end
         end
     end
-	gl_InternetDelay = (os.clock()*1000 - startTime) + 30
+	gl_InternetDelay = (os.clock()*1000 - startTime)
+    --echoGreen(gl_InternetDelay)
 	if gl_InternetDelay < 100 then
 		gl_InternetDelay = 100
 	end
+    
 end
 
 function writeMenu()
