@@ -86,9 +86,8 @@ function ban_do()
     if TB_Map_Set[nCurMapID] then
 		LocDoXongBan()
         return true -- Dang o trong map hop le
-    else
-        return false -- Khong o trong map hop le
-    end
+	end
+    return false -- Khong o trong map hop le
 end
 
 function main()
@@ -97,9 +96,9 @@ function main()
         -- Tang delay khi dang o trong map da xu ly de tiet kiem tai nguyen
         if isInValidMap then
 			echo("Dang xu ly ban do hop le.")
-            timer.Sleep(1000) -- 5s khi da xu ly xong map
+            timer.Sleep(2000) -- 2s khi da xu ly xong map
         else
-            timer.Sleep(3000) -- 1s khi dang tim map moi
+            timer.Sleep(3000) -- 3s khi dang tim map moi
         end
 	end
 end
