@@ -21,7 +21,7 @@ gl_ChatNham = false
 gl_ChatNhamTimeBreak = os.clock()
 gl_LocDoTheoSet = 1
 gl_LocDoNguHanh = 0
-gl_menuClickSpeed = 300
+gl_menuClickSpeed = 50
 gl_Sleep = 50
 gl_Tien = false
 gl_TienHanhTrang = 0
@@ -401,8 +401,6 @@ function LocDo()
                     for i = 0, 5 do
                         local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
                         if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
-                            
-
                             bFlag = bFlag + 1
                         end
                     end
@@ -496,172 +494,6 @@ function LocDo()
 		box.Close()
 		timer.Sleep(1000)
 	end
-end
-function LocDoXongBan()
-	if gl_GuiDo == false then
-		nVip = 0
-		nVipOld = 0
-	end
-	
-	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
-		gl_InternetDelay = gl_InternetDelayCatch
-	end
-	
-	if gl_InternetDelay > 3000 then
-		gl_InternetDelay = 3000
-	end
-	
-	timer.Sleep(gl_InternetDelay)
-	
-	-- local tmpFreeCell = getFreeHanhTrang(false)
-	-- if tmpFreeCell == nil then
-	-- 	return
-	-- end
-	
-    if gl_Debug then
-        echo("Ti’n hµnh l‰c ÆÂ!")
-    end
-    
-    -- Buoc 1: Phan loai item - luu do VIP vao bang tam
-    local tbVipItems = {} -- Bang luu thong tin do VIP
-    local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
-    
-    while nIndex ~= 0 do
-        local nGenre = item.GetKey(nIndex)
-        if nPlace == 3 and nGenre == 0 then
-            local bFlag = 0
-            local nDoVip = 0
-            if gl_LocDoTheoSet == 1 then
-                for k1, v1 in pairs(tbSetDo) do
-                    bFlag = 0
-                    for i = 0, 5 do
-                        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                        if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
-                            bFlag = bFlag + 1
-                        end
-                    end
-                    if bFlag == tablelength(v1) then
-                        nDoVip = 1
-                    end
-                end
-            else
-                for i = 0, 5 do
-                    local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                    if 600 >= nValue and tbThuocTinh[nMagicType] ~= nil and nValue >= tbThuocTinh[nMagicType] then
-                        bFlag = bFlag + 1
-                    end
-                end
-                if bFlag < gl_SoDongVip then
-                    nDoVip = 1
-                end
-            end
-			
-			-- loc do 5 hanh
-			if gl_LocDoNguHanh == 1 and nDoVip == 1 then
-				echo("Ti’n hµnh l‰c ÆÂ ngÚ hµnh!")
-				local nMagicType2, nValue2 = item.GetMagicAttrib(nIndex, kIndex)
-				if tbNguHanh[dongAn_1] ~= nil and tablelength(tbNguHanh[dongAn_1]) > 0 then
-					local nMagicType, nValue = item.GetMagicAttrib(nIndex, dongAn_1)
-					if tbNguHanh[dongAn_1][nMagicType] == nil then
-						nDoVip = 0
-					end
-				end
-				if tbNguHanh[dongAn_2] ~= nil and tablelength(tbNguHanh[dongAn_2]) > 0 then
-					local nMagicType, nValue = item.GetMagicAttrib(nIndex, dongAn_2)
-					if tbNguHanh[dongAn_2][nMagicType] == nil then
-						nDoVip = 0
-					end
-				end
-				if tbNguHanh[dongAn_3] ~= nil and tablelength(tbNguHanh[dongAn_3]) > 0  then
-					local nMagicType, nValue = item.GetMagicAttrib(nIndex, dongAn_3)
-					if tbNguHanh[dongAn_3][nMagicType] == nil then
-						nDoVip = 0
-					end
-				end
-			end
-			
-            if nDoVip == 0 then
-               -- Ban do rac ngay
-               ShopItem(nIndex)
-            else
-                -- Luu thong tin do VIP vao bang tam
-                table.insert(tbVipItems, {
-                    nIndex = nIndex,
-                    nX = nXLocDo,
-                    nY = nYLocDo
-                })
-                nVip = nVip + 1
-            end
-			itemFiltered = itemFiltered + 1
-        end
-        nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
-    end
-    
-    -- Buoc 2: Sau khi ban het do rac, gui do VIP vao ruong
-    -- if #tbVipItems > 0 then
-    --     for k, vipItem in pairs(tbVipItems) do
-    --         -- Lay lai thong tin item tu vi tri
-    --         local nItemIndex, nItemPlace, nItemX, nItemY = item.GetPos(vipItem.nIndex)
-    --         if nItemPlace == 3 then
-    --             GuiDo(vipItem.nIndex, vipItem.nX, vipItem.nY)
-                
-    --             -- Thong bao chi tiet ve do VIP
-    --             local szItemName = item.GetName(vipItem.nIndex)
-    --             echoRed(line())
-    --             echoGreen(">>> Phat hien ra: " .. szItemName)
-    --             echoRed("-----------------------------------")
-                
-    --             -- Hien thi cac thuoc tinh
-    --             for i = 0, 5 do
-    --                 local nMagicType, nValue = item.GetMagicAttrib(vipItem.nIndex, i)
-    --                 if nMagicType ~= 0 and tbThuocTinhName[nMagicType] ~= nil then
-    --                     local szThuocTinhName = tbThuocTinhName[nMagicType] or "KhÙng rı"
-    --                     echoGreen("DÚng " .. (i+1) .. ": " .. szThuocTinhName .. " = " .. nValue)
-    --                 end
-    --             end
-    --             echoRed(line())
-    --         end
-    --     end
-    -- end
-    -- if nVip > 0 then
-	-- 	if nVip > nVipOld then			
-	-- 		nVipOld = nVip
-	-- 	end
-	-- 	if gl_ChatNham and (os.time() - gl_VipReportTimeBreak) > 10 then
-	-- 		tbVulanLib.Chat("CH_NEARBY","<bclr=red>Th≠a cÀu Æ∑ t◊m Æ≠Óc " .. nVip .. " m„n VIP π! :0")
-	-- 		gl_VipReportTimeBreak = os.time()
-	-- 	end
-		
-    -- end
-	-- --[[
-	-- if os.time() - gl_Time > 300 then
-    --     echoRed(line())
-    --     echoGreen("Auto ChungNguy‘n version " .. chungVersion)
-	-- 	echoGreen("Edit by Hoµng Minh")
-	-- 	echoGreen("Hoµn toµn mi‘n ph› vµ open source!")
-	-- 	echoRed(line())
-    --     --echoDonate()
-    --     gl_Time = os.time()
-    -- end
-	-- --]]
-	-- if os.time() - filterRepordTimeBreak > 600 then
-	-- 	echoRed(line())
-    --     echoGreen("Auto Loc Do VIP")
-	-- 	echoGreen("Edit by LVT Official")
-	-- 	echoGreen("Hoµn toµn mi‘n ph› vµ open source!")
-	-- 	--echoRed(line())
-    --     reportFilter(itemFiltered, nVip)
-    --     filterRepordTimeBreak = os.time()
-    -- end
-	
-    -- echoQuangCao()
-    nFreeHanhTrang = getFreeHanhTrang(false)
-	
-	-- -- neu ruong dang mo thi dong lai
-	-- if box.IsVisible() == 1 then
-	-- 	box.Close()
-	-- 	timer.Sleep(1000)
-	-- end
 end
 
 function reportFilter(itemCount, vipCount)

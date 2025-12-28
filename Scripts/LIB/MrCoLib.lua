@@ -6,30 +6,6 @@ IncludeFile(szChungLib)
 -- Include config file
 szConfig = szScriptFolder.."\\00_config.lua"
 IncludeFile(szConfig)
-
--- -- Set Item Hoa
--- setHoa_BaoTay_Non_DaiLung = szScriptFolder.."\\LIB\\setdo\\hoa-non-baotay-dailung.lua"
--- setHoa_Ao_Giay = szScriptFolder.."\\LIB\\setdo\\hoa-ao-giay.lua"
-
--- -- Set Item Thuy
--- setThuy_BaoTay_Non_DaiLung = szScriptFolder.."\\LIB\\setdo\\thuy-non-baotay-dailung.lua"
--- setThuy_Ao_Giay = szScriptFolder.."\\LIB\\setdo\\thuy-ao-giay.lua"
-
--- -- Set Item Moc
--- setMoc_BaoTay_Non_DaiLung = szScriptFolder.."\\LIB\\setdo\\moc-non-baotay-dailung.lua"
--- setMoc_Ao_Giay = szScriptFolder.."\\LIB\\setdo\\moc-ao-giay.lua"
-
--- -- Set Item Tho
--- setTho_BaoTay_Non_DaiLung = szScriptFolder.."\\LIB\\setdo\\tho-non-baotay-dailung.lua"
--- setTho_Ao_Giay = szScriptFolder.."\\LIB\\setdo\\tho-ao-giay.lua"
-
--- -- Set Item Kim
--- setKim_BaoTay_Non_DaiLung = szScriptFolder.."\\LIB\\setdo\\kim-non-baotay-dailung.lua"
--- setKim_Ao_Giay = szScriptFolder.."\\LIB\\setdo\\kim-ao-giay.lua"
-
--- -- Set Item VK
--- setVK = szScriptFolder.."\\LIB\\setdo\\vk.lua"
-
 resetMenuDialog()
 
 freeCellCatch = 47
