@@ -513,10 +513,10 @@ function LocDoXongBan()
 	
 	timer.Sleep(gl_InternetDelay)
 	
-	local tmpFreeCell = getFreeHanhTrang(false)
-	if tmpFreeCell == nil then
-		return
-	end
+	-- local tmpFreeCell = getFreeHanhTrang(false)
+	-- if tmpFreeCell == nil then
+	-- 	return
+	-- end
 	
     if gl_Debug then
         echo("TiÕn hµnh läc ®å!")
@@ -655,9 +655,9 @@ function LocDoXongBan()
     -- end
 	
     -- echoQuangCao()
-    -- nFreeHanhTrang = getFreeHanhTrang(false)
+    nFreeHanhTrang = getFreeHanhTrang(false)
 	
-	-- neu ruong dang mo thi dong lai
+	-- -- neu ruong dang mo thi dong lai
 	-- if box.IsVisible() == 1 then
 	-- 	box.Close()
 	-- 	timer.Sleep(1000)

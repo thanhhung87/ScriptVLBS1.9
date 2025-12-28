@@ -88,26 +88,20 @@ for _, mapID in ipairs(TB_Map) do
 end
 -- Luu map ID da xu ly
 last_processed_map = 0
-countcheck = 0
 function ban_do()
     local nCurMapID = map.GetID()
     
     -- Kiem tra xem co o trong map trong danh sach khong (O(1))
     if TB_Map_Set[nCurMapID] then
         -- Chi chay neu chua xu ly map nay
-        if last_processed_map ~= nCurMapID then
-            echo("dang loc do xong ban")
-				for i = 1,3 do
-					LocDoXongBan()
-					timer.Sleep(500)
-				end
-            
-            last_processed_map = nCurMapID
-        end
+        -- if last_processed_map ~= nCurMapID then
+
+		LocDoXongBan()
+        -- end
         return true -- Dang o trong map hop le
     else
         -- Reset khi ra khoi map
-        last_processed_map = 0
+
         return false -- Khong o trong map hop le
     end
 end
@@ -117,9 +111,10 @@ function main()
 		local isInValidMap = ban_do()
         -- Tang delay khi dang o trong map da xu ly de tiet kiem tai nguyen
         if isInValidMap then
-            timer.Sleep(5000) -- 5s khi da xu ly xong map
+			echo("Dang xu ly ban do hop le.")
+            timer.Sleep(1000) -- 5s khi da xu ly xong map
         else
-            timer.Sleep(2000) -- 1s khi dang tim map moi
+            timer.Sleep(3000) -- 1s khi dang tim map moi
         end
 	end
 end
