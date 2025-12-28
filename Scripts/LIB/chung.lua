@@ -34,6 +34,7 @@ gl_filterCount = 0
 preMenuText = ""
 gl_Debug = false
 tbSetDo = {}
+tbSetDoByType = {}
 
 -- option loc do ngu hanh
 dongAn_1 = 1
@@ -623,7 +624,17 @@ function GuiDo(nIndex, nXLocDo, nYLocDo)
         end
     end
 end
-
+-- Ham kiem tra item co phai do hoang kim khong
+function IsHoangKimItem(nIndex)
+    local nPrice = item.GetPrice(nIndex)
+    
+    -- Do hoang kim co gia = 49999
+    if nPrice >= 49999 then
+        return true
+    end
+    
+    return false
+end
 function writeThuocTinh()
     echoRed('Ghi toµn bé thuéc tÝnh cã trong hµnh trang ra file')
     local nIndex, nPlace, nX, nY = item.GetFirst()

@@ -22,155 +22,7 @@ tbVulanLib.UseItemName = function(szItemName)
 	end
 	return 0
 end
-----------------------------------------------------------------------------------------
--- Ham nhan do xanh cap 10
-function NhanDoXanhCap10(sl, ...)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-	
-	LocDo()
-	local freeCell = getFreeHanhTrang(false)
-	if freeCell ~= nil and freeCell > freeCellCatch then
-		local pageing = math.ceil(sl/10);
-		for i = 1, pageing do
-			useLenhBai()
-			timer.Sleep(gl_menuClickSpeed)
-			clickMenuAll(1,...)
-			nhapso(sl)
-			sl = sl - 10
-			
-			if i < pageing then
-				timer.Sleep(50)
-			end
-		end
-		if gl_InternetDelay < 100 then
-			gl_InternetDelay = 100
-		end
-	end
-end
-----------------------------------------------------------------------------------------
--- Ham nhan do xanh cap 1
-function NhanDoXanhCap1(sl, ...)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-	
-	LocDo()
-	local freeCell = getFreeHanhTrang(false)
-	if freeCell ~= nil and freeCell > freeCellCatch then
-		local pageing = math.ceil(sl/10);
-		for i = 1, pageing do
-			useLenhBai()
-			timer.Sleep(gl_menuClickSpeed)
-			clickMenuAll(1,...)
-			nhapso(sl)
-			sl = sl - 10
-			
-			if i < pageing then
-				timer.Sleep(50)
-			end
-		end
-		if gl_InternetDelay < 100 then
-			gl_InternetDelay = 100
-		end
-	end
-end
-----------------------------------------------------------------------------------------
--- Ham nhan do HKMP
-function NhanHKMP(...)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-	
-	LocDo()
-	local freeCell = getFreeHanhTrang(false)
-	if freeCell ~= nil and freeCell > freeCellCatch then
-		useLenhBai()
-		timer.Sleep(gl_menuClickSpeed)
-		clickMenuAll(3,...)
-		timer.Sleep(gl_InternetDelay)
-	end
-end
 
--- Ham nhan do HKMP 2
-function NhanHKMP_2(l,...)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-	
-	LocDo()
-	local freeCell = getFreeHanhTrang(false)
-	if freeCell ~= nil and freeCell > freeCellCatch then
-		for i = 1, l do
-			useLenhBai()
-			timer.Sleep(gl_menuClickSpeed)
-			clickMenuAll(3,...)
-			if i < l then
-				timer.Sleep(100)
-			end
-		end
-		--timer.Sleep(gl_InternetDelay)
-		if gl_InternetDelay < 100 then
-			gl_InternetDelay = 100
-		end
-	end
-end
-----------------------------------------------------------------------------------------
--- Ham nhan do AnBangDinhQuoc
-function NhanAnBangDinhQuoc(id)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-	
-	LocDo()
-	local freeCell = getFreeHanhTrang(false)
-	if freeCell ~= nil and freeCell > freeCellCatch then
-		useLenhBai()
-		timer.Sleep(gl_menuClickSpeed)
-		clickMenuAll(4,id)
-		timer.Sleep(gl_InternetDelay)
-	end
-end
-----------------------------------------------------------------------------------------
--- Ham nhan do AnBangDinhQuoc 2
-function NhanAnBangDinhQuoc_2(l, id)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-	
-	LocDo()
-	local freeCell = getFreeHanhTrang(false)
-	if freeCell ~= nil and freeCell > freeCellCatch then
-		for i = 1, l do
-			useLenhBai()
-			timer.Sleep(gl_menuClickSpeed)
-			clickMenuAll(4,id)
-			if i < l then
-				timer.Sleep(100)
-			end
-		end
-		--timer.Sleep(gl_InternetDelay)
-	end
-end
 ----------------------------------------------------------------------------------------
 -- Ham them set do
 function ThemSetDo(setDo)
@@ -178,145 +30,278 @@ function ThemSetDo(setDo)
 	tbSetDo[index] = setDo
 end
 ----------------------------------------------------------------------------------------
--- Ham nhan do xanh
-function NhanDoXanh(...)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
-		return
-	end
-
-	LocDo()
-	echo("dang loc do")
-	timer.Sleep(3000)
-	-- local clickNext = true
-	-- local freeCell = getFreeHanhTrang(false)
-	-- local freeCellOld = nil
-	-- local cellCacth = 30
-	-- local delay = gl_InternetDelay
-	
-	-- if gl_InternetShit and cellCacth ~= 56 then
-	-- 	cellCacth = 56
-	-- 	echoRed(line())
-	-- 	echo("M¹ng chËp chên!")
-	-- 	echo("T¹m thêi gi¶m sè l­îng trong 5 phót.!")
-	-- 	echoRed(line())
-	-- end
-	-- if os.clock() - gl_InternetShitTime > 300 then
-	-- 	cellCacth = 5
-	-- 	gl_InternetShit = false
-	-- end
-	
-	-- while true do
-	
-	-- 	if clickNext == false then
-	-- 		if delay ~= gl_InternetDelay then
-	-- 			gl_InternetDelay = delay
-	-- 		end
-	-- 		break
-	-- 	end
-		
-	-- 	gl_FirstTime = os.clock()
-	-- 	while freeCell == freeCellOld and freeCellOld ~= nil do
-	-- 		if freeCell <= cellCacth then
-	-- 			clickNext = false
-    --             break
-	-- 		end
-	-- 		timer.Sleep(gl_InternetDelay)
-	-- 		freeCell = getFreeHanhTrang(false)
-	-- 		if (os.clock() - gl_FirstTime > 1) then
-	-- 			clickNext = false
-    --             break
-    --         end
-			
-	-- 	end
-		
-	-- 	-- if clickNext == true then
-	-- 	-- 	if freeCell ~= nil and freeCell >= cellCacth and freeCell ~= freeCellOld then
-	-- 	-- 		freeCellOld = freeCell
-	-- 	-- 		--useLenhBai()
-	-- 	-- 		timer.Sleep(gl_menuClickSpeed)
-	-- 	-- 		clickNext = clickMenuAll(...)
-	-- 	-- 		--nhapso(gl_SoluongItem)
-	-- 	-- 		--echo(gl_InternetDelay)
-	-- 	-- 		--timer.Sleep(gl_InternetDelay)
-	-- 	-- 		delay = 100
-	-- 	-- 	else
-	-- 	-- 		clickNext = false
-	-- 	-- 	end
-	-- 	-- end
-		
-	-- end
-end
-----------------------------------------------------------------------------------------
-
--- Ham nhan do HKMP va HK An Bang, Dinh Quoc vv
-function NhanDoHoangKim(...)
-	
-	if player.GetID() == 0 then
-		echo("Kh«ng t×m thÊy th«ng tin nh©n vËt!")
-		timer.Sleep(3000)
+-- Ham them set do theo kieu (su dung tbType de chi dinh loai do)
+-- Vi du: ThemSetDoByType({itemType = tbType.VuKhi.Kiem, [137] = 8, [85] = 200})
+-- Hoac: ThemSetDoByType({itemType = tbType.VuKhi, [137] = 8}) -- Loc tat ca vu khi
+-- Luu vao tbSetDoByType rieng biet
+function ThemSetDoByType(setConfig)
+	if setConfig.itemType == nil then
+		echo("Loi: ThemSetDoByType can phai co itemType!")
 		return
 	end
 	
-	LocDo()
-	local clickNext = true
-	local freeCell = getFreeHanhTrang(false)
-	local freeCellOld = nil
-	local cellCacth = 30
-	local delay = gl_InternetDelay
+	-- Kiem tra xem itemType la mot loai cu the hay mot nhom
+	local itemType = setConfig.itemType
 	
-	if gl_InternetShit and cellCacth ~= 56 then
-		cellCacth = 56
-		echoRed(line())
-		echo("M¹ng chËp chên!")
-		echo("T¹m thêi gi¶m sè l­îng trong 5 phót.!")
-		echoRed(line())
-	end
-	if os.clock() - gl_InternetShitTime > 300 then
-		cellCacth = 30
-		gl_InternetShit = false
-	end
-	
-	while true do
-	
-		if clickNext == false then
-			if delay ~= gl_InternetDelay then
-				gl_InternetDelay = delay
+	-- Neu itemType co nGenre => la loai cu the (VD: VuKhi.Dao)
+	-- Neu khong co nGenre => la nhom (VD: VuKhi)
+	if itemType.nGenre ~= nil then
+		-- Loai cu the - chi dinh nDetail va nParticular
+		local newSet = {
+			nDetail = itemType.nDetail,
+			nParticular = itemType.nParticular,
+		}
+		
+		-- Copy tat ca cac thuoc tinh magic tu setConfig (tru itemType)
+		for k, v in pairs(setConfig) do
+			if k ~= "itemType" then
+				newSet[k] = v
 			end
-			break
 		end
 		
-		gl_FirstTime = os.clock()
-		while freeCell == freeCellOld and freeCellOld ~= nil do
-			if freeCell <= cellCacth then
-				clickNext = false
-                break
+		-- Them vao tbSetDoByType
+		if tbSetDoByType == nil then
+			tbSetDoByType = {}
+		end
+		local index = tablelength(tbSetDoByType)
+		tbSetDoByType[index] = newSet
+	else
+		-- Nhom (VD: VuKhi) - them set cho tat ca cac loai trong nhom
+		-- Thu thap tat ca cac gia tri nDetail khac nhau
+		local tbDetailSet = {} -- Luu cac nDetail duy nhat
+		for subTypeName, subType in pairs(itemType) do
+			if subType.nDetail ~= nil then
+				tbDetailSet[subType.nDetail] = true
 			end
-			timer.Sleep(gl_InternetDelay)
-			freeCell = getFreeHanhTrang(false)
-			if (os.clock() - gl_FirstTime > 1) then
-				clickNext = false
-                break
+		end
+		
+		-- Tao mot set cho moi nDetail khac nhau
+		if tbSetDoByType == nil then
+			tbSetDoByType = {}
+		end
+		
+		for nDetail, _ in pairs(tbDetailSet) do
+			-- Tao set voi chi nDetail, khong co nParticular
+			local newSet = {
+				nDetail = nDetail,
+				-- Khong co nParticular => loc tat ca loai trong nhom co cung nDetail
+			}
+			
+			-- Copy tat ca cac thuoc tinh magic tu setConfig (tru itemType)
+			for k, v in pairs(setConfig) do
+				if k ~= "itemType" then
+					newSet[k] = v
+				end
+			end
+			
+			-- Them vao tbSetDoByType
+			local index = tablelength(tbSetDoByType)
+			tbSetDoByType[index] = newSet
+		end
+	end
+end
+
+-- Ham loc do theo cac loai da dinh nghia trong tbSetDoByType
+-- Tu dong loc tat ca cac loai do da duoc them qua ThemSetDoByType
+function LocDoTheoType()
+	if tbSetDoByType == nil or tablelength(tbSetDoByType) == 0 then
+		echo("Chua co set nao trong tbSetDoByType!")
+		return
+	end
+	
+	if gl_GuiDo == false then
+		nVip = 0
+		nVipOld = 0
+	end
+	
+	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
+		gl_InternetDelay = gl_InternetDelayCatch
+	end
+	
+	if gl_InternetDelay > 3000 then
+		gl_InternetDelay = 3000
+	end
+	
+	timer.Sleep(gl_InternetDelay)
+
+    -- Buoc 1: Phan loai item - luu do VIP vao bang tam
+    local tbVipItems = {} -- Bang luu thong tin do VIP
+    local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
+    
+    while nIndex ~= 0 do
+        local nGenre, nDetail, nParticular = item.GetKey(nIndex)
+        local szItemName = item.GetName(nIndex)
+        
+        -- Kiem tra xem item co match voi bat ky set nao trong tbSetDoByType khong
+        local isMatchAnyType = false
+        if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
+           echo("Dang kiem tra item: " .. szItemName .. " (Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular .. ")")
+            for _, setDo in pairs(tbSetDoByType) do
+                -- Kiem tra xem set co chi dinh nDetail khong
+                if setDo.nDetail ~= nil then
+                    -- Neu chi dinh nDetail, phai khop nDetail
+                    if setDo.nDetail == nDetail then
+                        -- Kiem tra nParticular
+                        if setDo.nParticular ~= nil then
+                            -- Neu chi dinh nParticular, phai khop chinh xac
+                            if setDo.nParticular == nParticular then
+                                isMatchAnyType = true
+                               --echo("Match type: Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular)
+                                break
+                            end
+                        else
+                            -- Khong chi dinh nParticular => loc tat ca loai trong nhom nay
+                            isMatchAnyType = true
+                            -- echo("Match type: Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=any")
+                            break
+                        end
+                    end
+                end
             end
-			
-		end
-		
-		if clickNext == true then
-			if freeCell ~= nil and freeCell >= cellCacth and freeCell ~= freeCellOld then
-				freeCellOld = freeCell
-				useLenhBai()
-				clickNext = clickMenuAll(...)
-				--nhapso(gl_SoluongItem)
-				--echo(gl_InternetDelay)
-				--timer.Sleep(gl_InternetDelay)
-				delay = 100
-			else
-				clickNext = false
-			end
-		end
-		
-	end
+        end
+        
+        -- Xu ly item
+        if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
+            if isMatchAnyType == false then
+                -- Item khong match bat ky type nao => ban luon
+                ShopItem(nIndex)
+                echo("Item khong thuoc loai can loc, ban do rac: " .. szItemName)
+                itemFiltered = itemFiltered + 1
+            else
+                -- Item match type => kiem tra dieu kien VIP
+                local bFlag = 0
+                local nDoVip = 0
+                if gl_LocDoTheoSet == 1 then
+                    -- Su dung tbSetDoByType
+                    for k1, v1 in pairs(tbSetDoByType) do
+                        -- Kiem tra loai item co khop voi set
+                        local matchWeaponType = true
+                        if v1.nDetail ~= nil and v1.nDetail ~= nDetail then
+                            matchWeaponType = false
+                        end
+                        if v1.nParticular ~= nil and v1.nParticular ~= nParticular then
+                            matchWeaponType = false
+                        end
+                        
+                        if matchWeaponType then
+                            bFlag = 0
+                            for i = 0, 5 do
+                                local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+                                if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
+                                    bFlag = bFlag + 1
+                                end
+                            end
+                            -- Dem so luong thuoc tinh (khong tinh nDetail va nParticular)
+                            local attrCount = 0
+                            for k, v in pairs(v1) do
+                                if k ~= "nDetail" and k ~= "nParticular" then
+                                    attrCount = attrCount + 1
+                                end
+                            end
+                            if bFlag == attrCount then
+                                nDoVip = 1
+                                break  -- Da tim thay set match, khong can kiem tra tiep
+                            end
+                        end
+                    end
+                else
+                    for i = 0, 5 do
+                        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+                        if 600 >= nValue and tbThuocTinh[nMagicType] ~= nil and nValue >= tbThuocTinh[nMagicType] then
+                            bFlag = bFlag + 1
+                        end
+                    end
+                    if bFlag < gl_SoDongVip then
+                        nDoVip = 1
+                    end
+                end
+                
+                if nDoVip == 0 then
+                   -- Ban do rac ngay
+                   ShopItem(nIndex)
+                   echo("Item khong phai VIP, ban do rac ngay. Index: " .. nIndex)
+                else
+                    -- Luu thong tin do VIP vao bang tam
+                    table.insert(tbVipItems, {
+                        nIndex = nIndex,
+                        nX = nXLocDo,
+                        nY = nYLocDo
+                    })
+                    nVip = nVip + 1
+                    echo("Tim duoc item VIP: " .. szItemName .. " (Index: " .. nIndex .. ")")
+                end
+                itemFiltered = itemFiltered + 1
+            end
+        end
+        nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
+    end
+    
+    echo("Da loc xong " .. itemFiltered .. " item, tim duoc " .. nVip .. " VIP")
 end
-----------------------------------------------------------------------------------------
+
+function LocDoXongBan()
+	if gl_GuiDo == false then
+		nVip = 0
+		nVipOld = 0
+	end
+	
+	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
+		gl_InternetDelay = gl_InternetDelayCatch
+	end
+	
+	if gl_InternetDelay > 3000 then
+		gl_InternetDelay = 3000
+	end
+	
+	timer.Sleep(gl_InternetDelay)
+
+    -- Buoc 1: Phan loai item - luu do VIP vao bang tam
+    local tbVipItems = {} -- Bang luu thong tin do VIP
+    local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
+    
+    while nIndex ~= 0 do
+        local nGenre = item.GetKey(nIndex)
+        if nPlace == 3 and nGenre == 0 then
+            local bFlag = 0
+            local nDoVip = 0
+            if gl_LocDoTheoSet == 1 then
+                for k1, v1 in pairs(tbSetDo) do
+                    bFlag = 0
+                    for i = 0, 5 do
+                        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+                        if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
+                            bFlag = bFlag + 1
+                        end
+                    end
+                    if bFlag == tablelength(v1) then
+                        nDoVip = 1
+                    end
+                end
+            else
+                for i = 0, 5 do
+                    local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+                    if 600 >= nValue and tbThuocTinh[nMagicType] ~= nil and nValue >= tbThuocTinh[nMagicType] then
+                        bFlag = bFlag + 1
+                    end
+                end
+                if bFlag < gl_SoDongVip then
+                    nDoVip = 1
+                end
+            end
+            if nDoVip == 0 then
+               -- Ban do rac ngay
+               ShopItem(nIndex)
+            else
+                -- Luu thong tin do VIP vao bang tam
+                table.insert(tbVipItems, {
+                    nIndex = nIndex,
+                    nX = nXLocDo,
+                    nY = nYLocDo
+                })
+                nVip = nVip + 1
+            end
+			itemFiltered = itemFiltered + 1
+        end
+        nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
+    end
+end

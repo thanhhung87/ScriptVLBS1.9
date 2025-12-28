@@ -27,8 +27,62 @@ gl_ChatNham = false -- muon tat thi set la false
 -- So luong Item xanh moi luot nhan toi da (ap dung cho ham NhanDoXanh() tu phien ban 2.3.2 tro di )
 gl_SoluongItem = 10
 
+-- Bang mo ta cac loai vat pham dua vao ItemGenre, DetailType, ParticularType
+tbType = {
+	-- Vu khi can chien (meleeweapon.txt) - ItemGenre=0, DetailType=0
+	VuKhi= {
+		Kiem = {nGenre = 0, nDetail = 0, nParticular = 0},     -- Kiem (ThietTruy thu, Cang Kiem, ...)
+		Dao = {nGenre = 0, nDetail = 0, nParticular = 1},      -- Dao (Yeu Dao, Don Dao, ...)
+		Con = {nGenre = 0, nDetail = 0, nParticular = 2},      -- Con (Thieu Hoa Con, Te Mi Con, ...)
+		Thuong = {nGenre = 0, nDetail = 0, nParticular = 3},   -- Thuong (Thiet Thuong, Truong Thuong, ...)
+		Chuy = {nGenre = 0, nDetail = 0, nParticular = 4},     -- Chuy (Toan Dau chuy, Bat Lang chuy, ...)
+		SongDao = {nGenre = 0, nDetail = 0, nParticular = 5},  -- Song dao (Nga Mi Thich, Tan Thiet Song Dao, ...)
+		Quyen = {nGenre = 0, nDetail = 0, nParticular = 6},
+		PhiTieu = {nGenre = 0, nDetail = 1, nParticular = 0},  -- Phi tieu (Kim Tien tieu, Yen tu Tieu, ...)
+		PhiDao = {nGenre = 0, nDetail = 1, nParticular = 1},   -- Phi dao (Cang Phi Dao, Luu Diep Dao, ...)
+		TuTien = {nGenre = 0, nDetail = 1, nParticular = 2},    -- Am khi/Co quan (To Tien, Nu, Cham, ...)-- Quyen/Trien Thu (Pho thong Trien Thu, ...)
+	},
+	-- Ao giap (armor.txt) - ItemGenre=0, DetailType=2
+	Ao = {
+		TatCa = {nGenre = 0, nDetail = 2},  -- Dinh nghia chung cho tat ca ao
+	},
+	
+	-- Ngoc boi/Day chuyen (amulet.txt) - ItemGenre=0, DetailType=4
+	NgocBoi = {
+		TatCa = {nGenre = 0, nDetail = 9},
+	},
+	
+	-- Giay (boot.txt) - ItemGenre=0, DetailType=5
+	Giay = {
+		TatCa = {nGenre = 0, nDetail = 5},  -- Dinh nghia chung cho tat ca giay
+	},
+	
+	-- Non/Mu (helm.txt) - ItemGenre=0, DetailType=7
+	Non = {
+		TatCa = {nGenre = 0, nDetail = 7}, -- Tat ca non/mu
+	},
+	
+	-- Nhan (ring.txt) - ItemGenre=0, DetailType=3
+	Nhan = {
+		TatCa = {nGenre = 0, nDetail = 3, nParticular = 0},    -- Tat ca nhan (Hoang Ngoc Gioi Chi, Cam Lam Thach, ...)
+	},
+	
+	-- Dai lung (belt.txt) - ItemGenre=0, DetailType=6
+	DaiLung = {
+		TatCa = {nGenre = 0, nDetail = 6}, -- Tat ca dai lung
+	},
+	
+	-- Bao tay/Ho uyen (cuff.txt) - ItemGenre=0, DetailType=8
+	BaoTay = {
+		TatCa = {nGenre = 0, nDetail = 8},  -- Dinh nghia chung cho tat ca bao tay/ho uyen
+	},
+	DayChuyen = {
+		TatCa = {nGenre = 0, nDetail = 4},  -- Dinh nghia chung cho tat ca ngoc boi/day chuyen
+	},
+}
 -- Template thuoc tinh
 --[[
+
 tbThuocTinh = {
     [43] = 1, -- khong the pha huy
 	[58] = 2, -- bo qua ne tranh
@@ -73,9 +127,48 @@ tbThuocTinh = {
 	[171] = 200, -- loi sat noi cong
 	[172] = 50,  -- doc sat noi cong
 }
+
 --]]
 
-tbThuocTinh = {
+ThemSetDo({
+    [139] = 1, -- ky nang vong co
+})
+ThemSetDo({
+	[171] = 180, -- loi sat noi cong
+	[116] = 20, -- toc do danh (noi cong)
+})
+ThemSetDo({
+    [104] = 25, -- ptvl
+	[106] = 40, -- tg lam cham
+	[98] = 20, --than phap
+})
+ThemSetDo({
+    [102] = 25, -- khang hoa
+	[110] = 40, -- tg lam choang
+	[99] = 20, -- sinh khi
+})
+ThemSetDo({
+    [114] = 20, -- khang tat ca
+	[104] = 25, -- ptvl
+	[106] = 40, -- tg lam cham
+})
+ThemSetDo({
+    [114] = 20, -- khang tat ca
+	[102] = 25, -- khang hoa
+	[110] = 40, -- tg lam choang
+})
+ThemSetDo({
+    [115] = 30, -- toc do danh (ngoai cong)
+	[125] = 50, -- doc sat ngoai cong
+})
+
+
+
+
+
+
+
+tbthuocTinh = {
     [43] = 1, -- khong the pha huy
 	[58] = 2, -- bo qua ne tranh
 	[85] = 180, -- sinh luc
@@ -119,35 +212,3 @@ tbThuocTinh = {
 	[171] = 200, -- loi sat noi cong
 	[172] = 50,  -- doc sat noi cong
 }
-
-ThemSetDo({
-    [139] = 1, -- ky nang vong co
-})
-ThemSetDo({
-	[171] = 180, -- loi sat noi cong
-	[116] = 20, -- toc do danh (noi cong)
-})
-ThemSetDo({
-    [104] = 25, -- ptvl
-	[106] = 40, -- tg lam cham
-	[98] = 20, --than phap
-})
-ThemSetDo({
-    [102] = 25, -- khang hoa
-	[110] = 40, -- tg lam choang
-	[99] = 20, -- sinh khi
-})
-ThemSetDo({
-    [114] = 20, -- khang tat ca
-	[104] = 25, -- ptvl
-	[106] = 40, -- tg lam cham
-})
-ThemSetDo({
-    [114] = 20, -- khang tat ca
-	[102] = 25, -- khang hoa
-	[110] = 40, -- tg lam choang
-})
-ThemSetDo({
-    [115] = 30, -- toc do danh (ngoai cong)
-	[125] = 50, -- doc sat ngoai cong
-})
