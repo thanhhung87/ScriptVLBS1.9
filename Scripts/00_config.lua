@@ -7,4 +7,3 @@ gl_LocDoTheoSet = 1
 gl_UseItem = false
 -- gui do vao ruong
 gl_GuiDo = false
-

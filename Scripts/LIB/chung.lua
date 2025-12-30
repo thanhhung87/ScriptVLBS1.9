@@ -543,7 +543,7 @@ end
 
 function GuiDo(nIndex, nXLocDo, nYLocDo)
     if gl_GuiDo then
-        --echoGreen("Ti’n hµnh c t ÆÂ!!!")
+        echoGreen("Ti’n hµnh c t ÆÂ!!!")
 		-- nem bo vat pham dang cam tren tay
 		quangItemRaNgoai()
 		

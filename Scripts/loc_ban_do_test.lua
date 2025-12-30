@@ -27,39 +27,37 @@ TB_Map_Set = {}
 for _, mapID in ipairs(TB_Map) do
     TB_Map_Set[mapID] = true
 end
-nCheckLimit = 0
-nCountSell = 0
+
 function ban_do()
-    while true do
-        local nCurMapID = map.GetID()
-        -- Kiem tra xem co o trong map trong danh sach khong (O(1))
-        if player.IsFightMode() == 0 or TB_Map_Set[nCurMapID] then
-            if nCountSell < 3 then
-                echo("Dang ban do lan: "..nCountSell)
-                LocDoTheoType()
-                nCountSell = nCountSell + 1
-                if nCheckLimit == 0 then
-                    if Item:UseByList() == 1 then
-                        nCheckLimit = 1
-                    end
+    local nCurMapID = map.GetID()
+    -- Kiem tra xem co o trong map trong danh sach khong (O(1))
+    if TB_Map_Set[nCurMapID] then
+		--LocDoXongBan()
+        LocDoTheoType()
+        return true -- Dang o trong map hop le
+	end
+    return false -- Khong o trong map hop le
+end
+nCheckLimit = 0
+function main()
+
+	while true do
+		local isInValidMap = ban_do()
+        -- Tang delay khi dang o trong map da xu ly de tiet kiem tai nguyen
+        if isInValidMap then
+			echo("Dang xu ly ban do hop le.")
+            timer.Sleep(2000) -- 2s khi da xu ly xong map
+            if nCheckLimit == 0 then
+                if Item:UseByList() == 1 then
+                    nCheckLimit = 1
                 end
-                timer.Sleep(500)
-            else
-                timer.Sleep(2000)
             end
         else
-            timer.Sleep(200)
-            if nCountSell ~= 0 then
-                nCountSell = 0
-            end
-            if nCheckLimit ~= 0 then
+            timer.Sleep(3000) -- 3s khi dang tim map moi
+            Item:UseByState()
+            if nCheckLimit == 1 then
                 nCheckLimit = 0
             end
         end
-        
-    end
-end
-
-function main()
-    ban_do()
+	end
 end

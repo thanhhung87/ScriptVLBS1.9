@@ -151,16 +151,6 @@ function LocDoTheoType()
 		echo("Chua co set nao trong tbSetDoByType!")
 		return
 	end
-
-	
-	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
-		gl_InternetDelay = gl_InternetDelayCatch
-	end
-	
-	if gl_InternetDelay > 3000 then
-		gl_InternetDelay = 3000
-	end
-	
 	timer.Sleep(gl_InternetDelay)
 
     -- Buoc 1: Phan loai item - luu do VIP vao bang tam
@@ -267,13 +257,12 @@ function LocDoTheoType()
                         nY = nYLocDo
                     })
                     nCountItemVip = nCountItemVip + 1
-                    echo("Tim duoc item VIP: " .. szItemName .. " (Index: " .. nIndex .. ")")
+                    --echo("Tim duoc item VIP: " .. szItemName .. " (Index: " .. nIndex .. ")")
                 end
                 itemFiltered = itemFiltered + 1
             end
         end
         nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
     end
-    
     echo("Da loc xong " .. itemFiltered .. " item, tim duoc " .. nCountItemVip .. " VIP")
 end
