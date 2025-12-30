@@ -43,39 +43,34 @@ tbType = {
 	Ao = {
 		TatCa = {nGenre = 0, nDetail = 2},  -- Dinh nghia chung cho tat ca ao
 	},
-	
-	-- Ngoc boi/Day chuyen (amulet.txt) - ItemGenre=0, DetailType=4
-	NgocBoi = {
-		TatCa = {nGenre = 0, nDetail = 9},
+	-- Nhan (ring.txt) - ItemGenre=0, DetailType=3
+	Nhan = {
+		TatCa = {nGenre = 0, nDetail = 3},    -- Tat ca nhan (Hoang Ngoc Gioi Chi, Cam Lam Thach, ...)
 	},
-	
-	-- Giay (boot.txt) - ItemGenre=0, DetailType=5
+    -- Day chuyen (amulet.txt) - ItemGenre=0, DetailType=4
+    DayChuyen = {
+		TatCa = {nGenre = 0, nDetail = 4},  -- Dinh nghia chung cho tat ca ngoc boi/day chuyen
+	},
+    -- Giay (boot.txt) - ItemGenre=0, DetailType=5
 	Giay = {
 		TatCa = {nGenre = 0, nDetail = 5},  -- Dinh nghia chung cho tat ca giay
 	},
-	
-	-- Non/Mu (helm.txt) - ItemGenre=0, DetailType=7
-	Non = {
-		TatCa = {nGenre = 0, nDetail = 7}, -- Tat ca non/mu
-	},
-	
-	-- Nhan (ring.txt) - ItemGenre=0, DetailType=3
-	Nhan = {
-		TatCa = {nGenre = 0, nDetail = 3, nParticular = 0},    -- Tat ca nhan (Hoang Ngoc Gioi Chi, Cam Lam Thach, ...)
-	},
-	
-	-- Dai lung (belt.txt) - ItemGenre=0, DetailType=6
+    -- Dai lung (belt.txt) - ItemGenre=0, DetailType=6
 	DaiLung = {
 		TatCa = {nGenre = 0, nDetail = 6}, -- Tat ca dai lung
 	},
-	
+    -- Non/Mu (helm.txt) - ItemGenre=0, DetailType=7
+	Non = {
+		TatCa = {nGenre = 0, nDetail = 7}, -- Tat ca non/mu
+	},
 	-- Bao tay/Ho uyen (cuff.txt) - ItemGenre=0, DetailType=8
 	BaoTay = {
 		TatCa = {nGenre = 0, nDetail = 8},  -- Dinh nghia chung cho tat ca bao tay/ho uyen
 	},
-	DayChuyen = {
-		TatCa = {nGenre = 0, nDetail = 4},  -- Dinh nghia chung cho tat ca ngoc boi/day chuyen
-	},
+	-- Ngoc boi (pendant.txt) - ItemGenre=0, DetailType=9
+	NgocBoi = {
+		TatCa = {nGenre = 0, nDetail = 9},
+	},	
 }
 ----------------------------------------------------------------------------------------
 -- Ham them set do theo kieu (su dung tbType de chi dinh loai do)
