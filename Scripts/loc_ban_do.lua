@@ -1,6 +1,6 @@
 szScriptFolder = system.GetScriptFolder()
 
-szChungLib = szScriptFolder.."\\LIB\\MrCoLib.lua"
+szChungLib = szScriptFolder.."\\LIB\\LocItem.lua"
 IncludeFile(szChungLib)
 szVk = szScriptFolder.."\\LIB\\setdo\\vukhi.lua"
 IncludeFile(szVk)

@@ -9,7 +9,8 @@ IncludeFile(szConfig)
 resetMenuDialog()
 
 freeCellCatch = 47
-
+nCountItemVip = 0
+itemFiltered = 0
 -- Dung vat pham theo ten trong Hanhtrang -- Edit lai
 tbVulanLib.UseItemName = function(szItemName)
 	local nItemIndex, nPlace, nX, nY = item.GetFirst()	
@@ -23,12 +24,59 @@ tbVulanLib.UseItemName = function(szItemName)
 	return 0
 end
 
-----------------------------------------------------------------------------------------
--- Ham them set do
-function ThemSetDo(setDo)
-	local index = tablelength(tbSetDo)
-	tbSetDo[index] = setDo
-end
+-- Bang mo ta cac loai vat pham dua vao ItemGenre, DetailType, ParticularType
+tbType = {
+	-- Vu khi can chien (meleeweapon.txt) - ItemGenre=0, DetailType=0
+	VuKhi= {
+		Kiem = {nGenre = 0, nDetail = 0, nParticular = 0},     -- Kiem (ThietTruy thu, Cang Kiem, ...)
+		Dao = {nGenre = 0, nDetail = 0, nParticular = 1},      -- Dao (Yeu Dao, Don Dao, ...)
+		Con = {nGenre = 0, nDetail = 0, nParticular = 2},      -- Con (Thieu Hoa Con, Te Mi Con, ...)
+		Thuong = {nGenre = 0, nDetail = 0, nParticular = 3},   -- Thuong (Thiet Thuong, Truong Thuong, ...)
+		Chuy = {nGenre = 0, nDetail = 0, nParticular = 4},     -- Chuy (Toan Dau chuy, Bat Lang chuy, ...)
+		SongDao = {nGenre = 0, nDetail = 0, nParticular = 5},  -- Song dao (Nga Mi Thich, Tan Thiet Song Dao, ...)
+		Quyen = {nGenre = 0, nDetail = 0, nParticular = 6},
+		PhiTieu = {nGenre = 0, nDetail = 1, nParticular = 0},  -- Phi tieu (Kim Tien tieu, Yen tu Tieu, ...)
+		PhiDao = {nGenre = 0, nDetail = 1, nParticular = 1},   -- Phi dao (Cang Phi Dao, Luu Diep Dao, ...)
+		TuTien = {nGenre = 0, nDetail = 1, nParticular = 2},    -- Am khi/Co quan (To Tien, Nu, Cham, ...)-- Quyen/Trien Thu (Pho thong Trien Thu, ...)
+	},
+	-- Ao giap (armor.txt) - ItemGenre=0, DetailType=2
+	Ao = {
+		TatCa = {nGenre = 0, nDetail = 2},  -- Dinh nghia chung cho tat ca ao
+	},
+	
+	-- Ngoc boi/Day chuyen (amulet.txt) - ItemGenre=0, DetailType=4
+	NgocBoi = {
+		TatCa = {nGenre = 0, nDetail = 9},
+	},
+	
+	-- Giay (boot.txt) - ItemGenre=0, DetailType=5
+	Giay = {
+		TatCa = {nGenre = 0, nDetail = 5},  -- Dinh nghia chung cho tat ca giay
+	},
+	
+	-- Non/Mu (helm.txt) - ItemGenre=0, DetailType=7
+	Non = {
+		TatCa = {nGenre = 0, nDetail = 7}, -- Tat ca non/mu
+	},
+	
+	-- Nhan (ring.txt) - ItemGenre=0, DetailType=3
+	Nhan = {
+		TatCa = {nGenre = 0, nDetail = 3, nParticular = 0},    -- Tat ca nhan (Hoang Ngoc Gioi Chi, Cam Lam Thach, ...)
+	},
+	
+	-- Dai lung (belt.txt) - ItemGenre=0, DetailType=6
+	DaiLung = {
+		TatCa = {nGenre = 0, nDetail = 6}, -- Tat ca dai lung
+	},
+	
+	-- Bao tay/Ho uyen (cuff.txt) - ItemGenre=0, DetailType=8
+	BaoTay = {
+		TatCa = {nGenre = 0, nDetail = 8},  -- Dinh nghia chung cho tat ca bao tay/ho uyen
+	},
+	DayChuyen = {
+		TatCa = {nGenre = 0, nDetail = 4},  -- Dinh nghia chung cho tat ca ngoc boi/day chuyen
+	},
+}
 ----------------------------------------------------------------------------------------
 -- Ham them set do theo kieu (su dung tbType de chi dinh loai do)
 -- Vi du: ThemSetDoByType({itemType = tbType.VuKhi.Kiem, [137] = 8, [85] = 200})
@@ -108,11 +156,7 @@ function LocDoTheoType()
 		echo("Chua co set nao trong tbSetDoByType!")
 		return
 	end
-	
-	if gl_GuiDo == false then
-		nVip = 0
-		nVipOld = 0
-	end
+
 	
 	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
 		gl_InternetDelay = gl_InternetDelayCatch
@@ -135,7 +179,7 @@ function LocDoTheoType()
         -- Kiem tra xem item co match voi bat ky set nao trong tbSetDoByType khong
         local isMatchAnyType = false
         if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
-           echo("Dang kiem tra item: " .. szItemName .. " (Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular .. ")")
+            -- echo("Dang kiem tra item: " .. szItemName .. " (Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular .. ")")
             for _, setDo in pairs(tbSetDoByType) do
                 -- Kiem tra xem set co chi dinh nDetail khong
                 if setDo.nDetail ~= nil then
@@ -227,7 +271,7 @@ function LocDoTheoType()
                         nX = nXLocDo,
                         nY = nYLocDo
                     })
-                    nVip = nVip + 1
+                    nCountItemVip = nCountItemVip + 1
                     echo("Tim duoc item VIP: " .. szItemName .. " (Index: " .. nIndex .. ")")
                 end
                 itemFiltered = itemFiltered + 1
@@ -236,72 +280,5 @@ function LocDoTheoType()
         nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
     end
     
-    echo("Da loc xong " .. itemFiltered .. " item, tim duoc " .. nVip .. " VIP")
-end
-
-function LocDoXongBan()
-	if gl_GuiDo == false then
-		nVip = 0
-		nVipOld = 0
-	end
-	
-	if gl_InternetDelay == nil or gl_InternetDelay < gl_InternetDelayCatch then
-		gl_InternetDelay = gl_InternetDelayCatch
-	end
-	
-	if gl_InternetDelay > 3000 then
-		gl_InternetDelay = 3000
-	end
-	
-	timer.Sleep(gl_InternetDelay)
-
-    -- Buoc 1: Phan loai item - luu do VIP vao bang tam
-    local tbVipItems = {} -- Bang luu thong tin do VIP
-    local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
-    
-    while nIndex ~= 0 do
-        local nGenre = item.GetKey(nIndex)
-        if nPlace == 3 and nGenre == 0 then
-            local bFlag = 0
-            local nDoVip = 0
-            if gl_LocDoTheoSet == 1 then
-                for k1, v1 in pairs(tbSetDo) do
-                    bFlag = 0
-                    for i = 0, 5 do
-                        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                        if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
-                            bFlag = bFlag + 1
-                        end
-                    end
-                    if bFlag == tablelength(v1) then
-                        nDoVip = 1
-                    end
-                end
-            else
-                for i = 0, 5 do
-                    local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                    if 600 >= nValue and tbThuocTinh[nMagicType] ~= nil and nValue >= tbThuocTinh[nMagicType] then
-                        bFlag = bFlag + 1
-                    end
-                end
-                if bFlag < gl_SoDongVip then
-                    nDoVip = 1
-                end
-            end
-            if nDoVip == 0 then
-               -- Ban do rac ngay
-               ShopItem(nIndex)
-            else
-                -- Luu thong tin do VIP vao bang tam
-                table.insert(tbVipItems, {
-                    nIndex = nIndex,
-                    nX = nXLocDo,
-                    nY = nYLocDo
-                })
-                nVip = nVip + 1
-            end
-			itemFiltered = itemFiltered + 1
-        end
-        nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
-    end
+    echo("Da loc xong " .. itemFiltered .. " item, tim duoc " .. nCountItemVip .. " VIP")
 end
