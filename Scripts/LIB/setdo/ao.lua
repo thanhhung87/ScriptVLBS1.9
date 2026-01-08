@@ -1,0 +1,5 @@
+-- ThemSetDoByType({
+-- 	itemType = tbType.Ao.TatCa,
+-- 	[113] = 40, -- thoi gian phuc hoi
+--     [104] = 25, -- ptvl
+-- })
