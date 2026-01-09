@@ -16,6 +16,12 @@ ThemSetDoByType({
 	[170] = 180, -- hoa sat noi cong
     [116] = 20, -- toc do danh (noi cong)
 })
+-- DMB/NDC
+ThemSetDoByType({
+	itemType = tbType.VuKhi,  -- Chi loc vk
+	[172] = 40,  -- doc sat noi cong
+    [116] = 20, -- toc do danh (noi cong)
+})
 -- CLD
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao,  -- Chi loc vk dao
