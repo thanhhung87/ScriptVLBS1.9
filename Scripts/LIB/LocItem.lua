@@ -29,6 +29,8 @@ tbType = {
 	-- Ao giap (armor.txt) - ItemGenre=0, DetailType=2
 	Ao = {
 		TatCa = {nGenre = 0, nDetail = 2},  -- Dinh nghia chung cho tat ca ao
+        Nam = {nGenre = 0, nDetail = 2, nParticular = {0, 1,2,3,4,5,6,14,15,16,17,18,19,20}},  -- Ao giap nam
+        Nu = {nGenre = 0, nDetail = 2, nParticular = {7, 8,9,10,11,12,13,21,22,23,24,25,26,27,28}},   -- Ao giap nu
 	},
 	-- Nhan (ring.txt) - ItemGenre=0, DetailType=3
 	Nhan = {
@@ -37,10 +39,14 @@ tbType = {
     -- Day chuyen (amulet.txt) - ItemGenre=0, DetailType=4
     DayChuyen = {
 		TatCa = {nGenre = 0, nDetail = 4},  -- Dinh nghia chung cho tat ca ngoc boi/day chuyen
+        Nam = {nGenre = 0, nDetail = 4, nParticular = 1},  -- Day chuyen nam
+        Nu = {nGenre = 0, nDetail = 4, nParticular = 0},   -- Day chuyen nu
 	},
     -- Giay (boot.txt) - ItemGenre=0, DetailType=5
 	Giay = {
 		TatCa = {nGenre = 0, nDetail = 5},  -- Dinh nghia chung cho tat ca giay
+        Nam = {nGenre = 0, nDetail = 5, nParticular = {0,1}},  -- Giay nam
+        Nu = {nGenre = 0, nDetail = 5, nParticular = {2,3}},   -- Giay nu
 	},
     -- Dai lung (belt.txt) - ItemGenre=0, DetailType=6
 	DaiLung = {
@@ -49,14 +55,20 @@ tbType = {
     -- Non/Mu (helm.txt) - ItemGenre=0, DetailType=7
 	Non = {
 		TatCa = {nGenre = 0, nDetail = 7}, -- Tat ca non/mu
+        Nam = {nGenre = 0, nDetail = 7, nParticular = {0,1,2,3,4,5,6}},  -- Non/Mu nam
+        Nu = {nGenre = 0, nDetail = 7, nParticular = {7,8,9,10,11,12,13}},   -- Non/Mu nu
 	},
 	-- Bao tay/Ho uyen (cuff.txt) - ItemGenre=0, DetailType=8
 	BaoTay = {
 		TatCa = {nGenre = 0, nDetail = 8},  -- Dinh nghia chung cho tat ca bao tay/ho uyen
+        Nam = {nGenre = 0, nDetail = 8, nParticular = 1},  -- Bao tay nam
+        Nu = {nGenre = 0, nDetail = 8, nParticular = 0},   -- Bao tay nu
 	},
 	-- Ngoc boi (pendant.txt) - ItemGenre=0, DetailType=9
 	NgocBoi = {
 		TatCa = {nGenre = 0, nDetail = 9},
+        Nam = {nGenre = 0, nDetail = 9, nParticular = 1},  -- Ngoc boi nam
+        Nu = {nGenre = 0, nDetail = 9, nParticular = 0},   -- Ngoc boi nu
 	},	
 }
 ----------------------------------------------------------------------------------------
@@ -164,10 +176,23 @@ function LocDoTheoType()
                         -- Kiem tra nParticular
                         if setDo.nParticular ~= nil then
                             -- Neu chi dinh nParticular, phai khop chinh xac
-                            if setDo.nParticular == nParticular then
-                                isMatchAnyType = true
-                               --echo("Match type: Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular)
-                                break
+                            if type(setDo.nParticular) == "table" then
+                                local foundP = false
+                                for _, pVal in ipairs(setDo.nParticular) do
+                                    if pVal == nParticular then
+                                        foundP = true
+                                        break
+                                    end
+                                end
+                                if foundP then 
+                                    isMatchAnyType = true 
+                                end
+                            else                    
+                                if setDo.nParticular == nParticular then
+                                    isMatchAnyType = true
+                                --echo("Match type: Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular)
+                                    break
+                                end
                             end
                         else
                             -- Khong chi dinh nParticular => loc tat ca loai trong nhom nay
