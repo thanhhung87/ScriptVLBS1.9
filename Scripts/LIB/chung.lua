@@ -632,6 +632,10 @@ function IsHoangKimItem(nIndex)
     if nPrice >= 49999 then
         return true
     end
+    local nGenre, nDetail, nParticular = item.GetKey(nIndex)
+    if nDetail == 12 or nDetail == 13 or nDetail == 14 then
+        return true
+    end
     
     return false
 end

@@ -17,6 +17,12 @@ ThemSetDoByType({
     [111] = 20, -- toc do di chuyen
 	[104] = 10, -- ptvl
 })
+--Hoa -- nu
+ThemSetDoByType({
+	itemType = tbType.Giay.Nu,
+    [111] = 40, -- toc do di chuyen
+	[104] = 10, -- ptvl
+})
 --Tho -- nam
 ThemSetDoByType({
 	itemType = tbType.Giay.Nam,
