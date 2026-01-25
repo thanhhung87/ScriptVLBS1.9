@@ -1,8 +1,14 @@
---thuy
+--thuy - nam
 ThemSetDoByType({
-	itemType = tbType.Ao.TatCa,
+	itemType = tbType.Ao.Nam,
 	-- [113] = 40, -- thoi gian phuc hoi
-    [102] = 10, -- khang hoa
+    [102] = 15, -- khang hoa
+})
+--thuy - nu
+ThemSetDoByType({
+	itemType = tbType.Ao.Nu,
+	-- [113] = 40, -- thoi gian phuc hoi
+    [102] = 15, -- khang hoa
 })
 --Moc -- Nam
 ThemSetDoByType({

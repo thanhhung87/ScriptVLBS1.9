@@ -8,25 +8,27 @@
 --kim
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[101] = 10, -- khang doc
+	[101] = 20, -- khang doc
 	-- [106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
 })
 --moc
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[103] = 10, -- khang loi
+	[103] = 25, -- khang loi
+	[85] = 150, -- sinh luc
 
 })
 --thuy
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[102] = 10, -- khang hoa
+	[102] = 25, -- khang hoa
 
 })
 --Tho
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[105] = 10, -- khang bang
+	[105] = 25, -- khang bang
+	[85] = 150, -- sinh luc
 
 })
