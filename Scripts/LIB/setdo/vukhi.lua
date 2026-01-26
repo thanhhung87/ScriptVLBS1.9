@@ -14,11 +14,9 @@ ThemSetDoByType({
 -- CBR/TN
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
+	[139] = 1, -- ky nang vong co
 	[116] = 20, -- toc do danh (noi cong)
-	[170] = 10, -- hoa sat noi cong
-	[104] = 20, -- ptvl
-	[106] = 40, -- tg lam cham
-    
+	[170] = 10, -- hoa sat noi cong    
 })
 -- DMB/NDC
 ThemSetDoByType({
