@@ -15,7 +15,9 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
-	[170] = 140, -- hoa sat noi cong
+	[170] = 10, -- hoa sat noi cong
+	[104] = 20, -- ptvl
+	[106] = 40, -- tg lam cham
     
 })
 -- DMB/NDC
@@ -40,7 +42,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao, 
     [115] = 30, -- toc do danh (ngoai cong)
-	[121] = 10, -- stvl diem (dong an)
+	--[121] = 10, -- stvl diem (dong an)
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao, 
@@ -57,7 +59,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con, 
     [115] = 30, -- toc do danh (ngoai cong)
-	[125] = 10, -- doc sat ngoai cong
+	--[125] = 10, -- doc sat ngoai cong
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con, 

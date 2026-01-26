@@ -8,14 +8,14 @@ ThemSetDoByType({
 --Thuy -- nam
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
-	[102] = 5, -- khang hoa
+	[102] = 20, -- khang hoa
     -- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
 --Tho -- Nam
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
-	[105] = 5, -- khang bang
+	[105] = 20, -- khang bang
 })
 --Tho --nu
 ThemSetDoByType({
