@@ -22,7 +22,7 @@ ThemSetDoByType({
 	itemType = tbType.BaoTay.Nu,
 	[105] = 25, -- khang bang
 })
---Kim - nam
+--Set Hoa --Nam - He Kim
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
 	[101] = 25, -- khang doc

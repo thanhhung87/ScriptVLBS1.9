@@ -7,7 +7,7 @@ ThemSetDoByType({
 	itemType = tbType.DayChuyen.TatCa,
 	[92] = 5, -- phuc hoi noi luc moi nua giay
 })
---Hoa -- nam
+--Set Tho --Ham - He Hoa
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
 	--[114] = 10, -- khang tat ca

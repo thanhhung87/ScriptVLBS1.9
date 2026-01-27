@@ -7,24 +7,31 @@ ThemSetDoByType({
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
---tho
+--Set Moc --Nam - He Tho
 ThemSetDoByType({
-	itemType = tbType.NgocBoi.TatCa,
-	[105] = 20, -- khang bang
+	itemType = tbType.NgocBoi.Nam,
+	[105] = 5, -- khang bang
+	-- [110] = 40, -- tg lam choang
+	-- [99] = 20, -- sinh khi
+})
+--Set Moc --Nu - He Tho
+ThemSetDoByType({
+	itemType = tbType.NgocBoi.Nu,
+	[105] = 5, -- khang bang
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
 --Kim -- nam
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
-	[101] = 20, -- khang doc
+	[101] = 5, -- khang doc
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
 --Hoa -- nu
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nu,
-	[104] = 10, -- ptvl
+	[104] = 5, -- ptvl
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })

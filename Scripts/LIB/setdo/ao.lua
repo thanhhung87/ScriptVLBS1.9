@@ -10,17 +10,17 @@ ThemSetDoByType({
 	-- [113] = 40, -- thoi gian phuc hoi
     [102] = 15, -- khang hoa
 })
---Moc -- Nam
+--Set Hoa --Nam - He Moc
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
-	-- [113] = 40, -- thoi gian phuc hoi
-    [103] = 10, -- khang loi
+	[113] = 40, -- thoi gian phuc hoi
+    [103] = 5, -- khang loi
 })
---Hoa - nam
+-- Set Tho --Nam - He Hoa
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	-- [113] = 40, -- thoi gian phuc hoi
-    [104] = 10, -- ptvl
+    [104] = 5, -- ptvl
 })
 --Kim - Nu
 ThemSetDoByType({
