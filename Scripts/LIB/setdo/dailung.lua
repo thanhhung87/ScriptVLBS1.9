@@ -5,21 +5,21 @@
 -- 	-- [106] = 40, -- tg lam cham
 -- 	-- [98] = 20, --than phap
 -- })
---kim
+--Set Moc --He Kim
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[101] = 20, -- khang doc
+	[101] = 5, -- khang doc
 	-- [106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
 })
---moc
+--Set Tho --He Moc
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[103] = 25, -- khang loi
-	[85] = 150, -- sinh luc
+	[103] = 20, -- khang loi
+	--[85] = 150, -- sinh luc
 
 })
---thuy
+--Set Hoa -- He thuy
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
 	[102] = 25, -- khang hoa
