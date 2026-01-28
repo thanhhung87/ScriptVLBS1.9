@@ -31,9 +31,9 @@ ThemSetDoByType({
 	[103] = 5, -- khang loi
 
 })
---Set Hoa -- He Tho
+--Tho
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[105] = 5, -- khang bang
+	[105] = 20, -- khang bang
 
 })

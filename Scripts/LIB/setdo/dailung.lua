@@ -8,7 +8,7 @@
 --Set Moc --He Kim
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[101] = 5, -- khang doc
+	[101] = 25, -- khang doc
 	-- [106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
 })

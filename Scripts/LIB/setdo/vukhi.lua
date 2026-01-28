@@ -44,8 +44,8 @@ ThemSetDoByType({
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao, 
-    -- [115] = 30, -- toc do danh (ngoai cong)
-	[125] = 5, -- doc sat ngoai cong
+    [115] = 30, -- toc do danh (ngoai cong)
+	--[125] = 5, -- doc sat ngoai cong
 })
 
 --TL
@@ -57,7 +57,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con, 
     [115] = 30, -- toc do danh (ngoai cong)
-	--[125] = 10, -- doc sat ngoai cong
+	[125] = 10, -- doc sat ngoai cong
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con, 
