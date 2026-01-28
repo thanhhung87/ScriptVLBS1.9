@@ -21,10 +21,10 @@ ThemSetDoByType({
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
---Kim -- nam
+--Set Hoa --Nam - He Kim
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
-	[101] = 5, -- khang doc
+	[101] = 25, -- khang doc
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
