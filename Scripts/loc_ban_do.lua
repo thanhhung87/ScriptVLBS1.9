@@ -19,6 +19,8 @@ szDaiLung = szScriptFolder.."\\LIB\\setdo\\dailung.lua"
 IncludeFile(szDaiLung)
 szBaoTay = szScriptFolder.."\\LIB\\setdo\\baotay.lua"
 IncludeFile(szBaoTay)
+szDayChuyen = szScriptFolder.."\\LIB\\setdo\\daychuyen.lua"
+IncludeFile(szDayChuyen)
 
 resetMenuDialog()
 TB_Map = {1,11,78,162,37,80,176,53,20,99,100,101,121,153,174}
