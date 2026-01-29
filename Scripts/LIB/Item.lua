@@ -1,6 +1,7 @@
 szScriptFolder = system.GetScriptFolder()
 
 szChungLib = szScriptFolder.."\\LIB\\chung.lua"
+
 IncludeFile(szChungLib)
 Item = Item or {}
 tbSkillState = {

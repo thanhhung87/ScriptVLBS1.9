@@ -1,3 +1,9 @@
+
+ThemSetDoByType({
+	itemType = tbType.Ao.TatCa,
+	[113] = 40, -- thoi gian phuc hoi
+    -- [102] = 15, -- khang hoa
+})
 --thuy - nam
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
