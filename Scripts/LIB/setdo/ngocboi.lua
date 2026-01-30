@@ -17,7 +17,7 @@ ThemSetDoByType({
 --Set Moc --Nu - He Tho
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nu,
-	[105] = 5, -- khang bang
+	[105] = 20, -- khang bang
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })

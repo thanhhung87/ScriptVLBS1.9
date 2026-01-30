@@ -9,7 +9,7 @@
 ThemSetDoByType({
 	itemType = tbType.Giay.TatCa,
     [111] = 40, -- toc do di chuyen
-	[101] = 5, -- khang doc
+	[101] = 25, -- khang doc
 })
 --Set Moc -- Nam -- Hoa
 ThemSetDoByType({
@@ -27,9 +27,9 @@ ThemSetDoByType({
 })
 --Set Hoa --Nam - He Tho
 ThemSetDoByType({
-	itemType = tbType.Giay.TatCa,
+	itemType = tbType.Giay.Nam,
     [111] = 40, -- toc do di chuyen
-	[105] = 5, -- khang bang
+	[105] = 25, -- khang bang
 })
 -- Moc -- nu
 ThemSetDoByType({
@@ -37,6 +37,7 @@ ThemSetDoByType({
     [111] = 20, -- toc do di chuyen
 	[103] = 5, -- khang loi
 })
+
 
 
 

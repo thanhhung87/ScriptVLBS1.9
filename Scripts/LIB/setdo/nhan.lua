@@ -5,7 +5,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	--[139] = 1, -- ky nang von co
-	[92] = 5, -- phuc hoi noi luc moi nua giay
+	[92] = 20, -- phuc hoi noi luc moi nua giay
 })
 --hoa
 ThemSetDoByType({
@@ -16,24 +16,24 @@ ThemSetDoByType({
 --thuy
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[102] = 5, -- khang hoa
+	[102] = 20, -- khang hoa
 	-- [110] = 40, -- tg lam choang
 })
 --Kim
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[101] = 5, -- khang doc
+	[101] = 25, -- khang doc
 
 })
 --Moc
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[103] = 5, -- khang loi
+	[103] = 25, -- khang loi
 
 })
 --Tho
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[105] = 20, -- khang bang
+	[105] = 25, -- khang bang
 
 })
