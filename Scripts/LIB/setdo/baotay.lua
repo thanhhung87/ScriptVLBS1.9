@@ -26,4 +26,5 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
 	[101] = 25, -- khang doc
+	
 })
