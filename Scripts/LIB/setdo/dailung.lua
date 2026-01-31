@@ -8,14 +8,14 @@
 --Set Moc --He Kim
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[101] = 30, -- khang doc
-	[134] = 10, -- chsttnl
+	[101] = 25, -- khang doc
+	--[134] = 10, -- chsttnl
 })
 --Set Tho --He Moc
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[103] = 25, -- khang loi
-	--[85] = 150, -- sinh luc
+	[103] = 30, -- khang loi
+	[134] = 10, -- chsttnl
 
 })
 --Set Hoa -- He thuy

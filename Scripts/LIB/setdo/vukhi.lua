@@ -28,40 +28,40 @@ ThemSetDoByType({
 -- DM
 ThemSetDoByType({
 	itemType = tbType.VuKhi.PhiDao,
-	[115] = 30, -- toc do danh (ngoai cong)
+	[115] = 20, -- toc do danh (ngoai cong)
 	[125] = 5, -- doc sat ngoai cong
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.PhiDao,
-	[115] = 30, -- toc do danh (ngoai cong)
-	[121] = 10, -- stvl diem (dong an)
+	[115] = 20, -- toc do danh (ngoai cong)
+	[121] = 5, -- stvl diem (dong an)
 })
 -- CLD
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao, 
-    [115] = 30, -- toc do danh (ngoai cong)
-	--[121] = 10, -- stvl diem (dong an)
+    [115] = 20, -- toc do danh (ngoai cong)
+	[121] = 5, -- stvl diem (dong an)
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao, 
-    [115] = 30, -- toc do danh (ngoai cong)
-	--[125] = 5, -- doc sat ngoai cong
+    [115] = 20, -- toc do danh (ngoai cong)
+	[125] = 5, -- doc sat ngoai cong
 })
 
 --TL
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Quyen, 
     [115] = 30, -- toc do danh (ngoai cong)
-	[125] = 10, -- doc sat ngoai cong
+	[125] = 5, -- doc sat ngoai cong
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con, 
     [115] = 30, -- toc do danh (ngoai cong)
-	[125] = 10, -- doc sat ngoai cong
+	[125] = 5, -- doc sat ngoai cong
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con, 
-    [115] = 30, -- toc do danh (ngoai cong)
+    [115] = 20, -- toc do danh (ngoai cong)
 	[121] = 10, -- stvl diem (dong an)
 })
 -- Nga my
