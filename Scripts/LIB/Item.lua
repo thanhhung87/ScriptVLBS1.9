@@ -11,8 +11,11 @@ tbSkillState = {
     --{nId = 1215, szName = "Th­ T×nh Mói MÝt"},
 }
 tbListItem = {
-    "CÈm nang hoµng kim",
+    "N»m Th¼ng Lé Bao",
     "Cöu ChuyÓn Hoµn Hån ®an",    
+}
+tbListItem_Sell = {
+    "S¸t Thñ lÖnh",
 }
 function Item:UseByIndex(nIndex)
     local nItemIndex, nPlace, nX, nY = item.GetFirst()
@@ -58,4 +61,20 @@ function Item:UseByList()
         end
     end
     return 0
+end
+function Item:SellByList()
+    for _, szItem in pairs(tbListItem_Sell) do
+        local nItemIndex, nPlace, nX, nY = item.GetFirst()
+        while nItemIndex ~= 0 do
+            local szItemName = item.GetName(nItemIndex)
+            if nPlace == 3 and szItemName == szItem then
+                echo("Selling item: " .. szItemName)        
+                ShopItem(nItemIndex)
+                return 1
+            end
+            nItemIndex, nPlace, nX, nY = item.GetNext()
+        end
+    end
+    return 0
+    
 end

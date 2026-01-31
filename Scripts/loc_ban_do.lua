@@ -39,9 +39,11 @@ function ban_do()
             echo("Dang ban do lan: "..nCountSell)
             LocDoTheoType()
             if nCheckLimit == 0 then
-                if Item:UseByList() == 1 then
-                    nCheckLimit = 1
-                end
+                -- if Item:UseByList() == 1 then
+                --     nCheckLimit = 1
+                -- end
+                Item:SellByList()
+                nCheckLimit = 1
             end
             if nCountSell < 5 then 
                 timer.Sleep(200)

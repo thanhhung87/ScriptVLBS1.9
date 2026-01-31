@@ -10,7 +10,7 @@ ThemSetDoByType({
 --Set Tho --Ham - He Hoa
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
-	--[114] = 10, -- khang tat ca
+	[114] = 10, -- khang tat ca
 	[104] = 5, -- ptvl
 	
 })

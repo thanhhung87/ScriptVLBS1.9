@@ -13,7 +13,7 @@ ThemSetDoByType({
 })
 --Set Moc -- Nam -- Hoa
 ThemSetDoByType({
-	itemType = tbType.Giay.TatCa,
+	itemType = tbType.Giay.Nam,
     [111] = 20, -- toc do di chuyen
 	[104] = 5, -- ptvl
 	
