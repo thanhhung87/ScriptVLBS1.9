@@ -1,14 +1,14 @@
 --Set Hoa --nam -- Hoa
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[104] = 5, -- ptvl
+	[104] = 10, -- ptvl
 	-- [106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
 })
 --Set Moc --Nam - He Moc
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[103] = 5, -- khang loi
+	[103] = 10, -- khang loi
 })
 --moc - Nu
 ThemSetDoByType({
@@ -18,10 +18,10 @@ ThemSetDoByType({
 --Set Tho - Nam - He Tho
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[105] = 5, -- khang bang
+	[105] = 20, -- khang bang
 })
 --Thuy - Nu
 ThemSetDoByType({
-	itemType = tbType.Non.Nu,
+	itemType = tbType.Non.TatCa,
 	[102] = 15, -- khang hoa
 })
