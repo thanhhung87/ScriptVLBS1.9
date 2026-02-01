@@ -163,122 +163,70 @@ function LocDoTheoType()
     while nIndex ~= 0 do
         local nGenre, nDetail, nParticular = item.GetKey(nIndex)
         local szItemName = item.GetName(nIndex)
-        
-        -- Kiem tra xem item co match voi bat ky set nao trong tbSetDoByType khong
-        local isMatchAnyType = false
+        local currentSetMatched = nil -- L?u set kh?p v?i item này
+
         if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
-            -- echo("Dang kiem tra item: " .. szItemName .. " (Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular .. ")")
+            -- B??c 1: Tìm xem item này thu?c Set nào trong tbSetDoByType
             for _, setDo in pairs(tbSetDoByType) do
-                -- Kiem tra xem set co chi dinh nDetail khong
-                if setDo.nDetail ~= nil then
-                    -- Neu chi dinh nDetail, phai khop nDetail
-                    if setDo.nDetail == nDetail then
-                        -- Kiem tra nParticular
-                        if setDo.nParticular ~= nil then
-                            -- Neu chi dinh nParticular, phai khop chinh xac
-                            if type(setDo.nParticular) == "table" then
-                                local foundP = false
-                                for _, pVal in ipairs(setDo.nParticular) do
-                                    if pVal == nParticular then
-                                        foundP = true
-                                        break
-                                    end
-                                end
-                                if foundP then 
-                                    isMatchAnyType = true 
-                                end
-                            else                    
-                                if setDo.nParticular == nParticular then
-                                    isMatchAnyType = true
-                                --echo("Match type: Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=" .. nParticular)
-                                    break
-                                end
-                            end
-                        else
-                            -- Khong chi dinh nParticular => loc tat ca loai trong nhom nay
-                            isMatchAnyType = true
-                            -- echo("Match type: Genre=" .. nGenre .. ", Detail=" .. nDetail .. ", Particular=any")
-                            break
+                if setDo.nDetail == nDetail then
+                    local isParticularMatch = false
+                    if setDo.nParticular == nil then
+                        isParticularMatch = true
+                    elseif type(setDo.nParticular) == "table" then
+                        for _, pVal in pairs(setDo.nParticular) do
+                            if pVal == nParticular then isParticularMatch = true; break end
                         end
+                    elseif setDo.nParticular == nParticular then
+                        isParticularMatch = true
+                    end
+
+                    if isParticularMatch then
+                        currentSetMatched = setDo
+                        break 
                     end
                 end
             end
-        end
-        
-        -- Xu ly item
-        if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
-            if isMatchAnyType == false then
-                -- Item khong match bat ky type nao => ban luon
-                ShopItem(nIndex)
-                --echo("Item khong thuoc loai can loc, ban do rac: " .. szItemName)
+
+            -- B??c 2: X? lý d?a trên vi?c có tìm th?y Set hay không
+            if currentSetMatched == nil then
+                -- Không thu?c lo?i c?n gi? -> Bán
+                --ShopItem(nIndex)
                 itemFiltered = itemFiltered + 1
+				echo("Rac : " .. szItemName)
             else
-                -- Item match type => kiem tra dieu kien VIP
+                -- Thu?c lo?i c?n l?c -> Ki?m tra thu?c tính ma pháp
                 local bFlag = 0
-                local nDoVip = 0
-                if gl_LocDoTheoSet == 1 then
-                    -- Su dung tbSetDoByType
-                    for k1, v1 in pairs(tbSetDoByType) do
-                        -- Kiem tra loai item co khop voi set
-                        local matchWeaponType = true
-                        if v1.nDetail ~= nil and v1.nDetail ~= nDetail then
-                            matchWeaponType = false
-                        end
-                        if v1.nParticular ~= nil and v1.nParticular ~= nParticular then
-                            matchWeaponType = false
-                        end
+                local targetAttrCount = 0
+                
+                -- Duy?t qua các thu?c tính c?n l?c trong Set
+                for magicID, minValue in pairs(currentSetMatched) do
+                    if type(magicID) == "number" then -- Ch? tính các ID thu?c tính (s?)
+                        targetAttrCount = targetAttrCount + 1
                         
-                        if matchWeaponType then
-                            bFlag = 0
-                            for i = 0, 5 do
-                                local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                                if 600 >= nValue and v1[nMagicType] ~= nil and nValue >= v1[nMagicType] then
-                                    bFlag = bFlag + 1
-                                end
-                            end
-                            -- Dem so luong thuoc tinh (khong tinh nDetail va nParticular)
-                            local attrCount = 0
-                            for k, v in pairs(v1) do
-                                if k ~= "nDetail" and k ~= "nParticular" then
-                                    attrCount = attrCount + 1
-                                end
-                            end
-                            if bFlag == attrCount then
-                                nDoVip = 1
-                                break  -- Da tim thay set match, khong can kiem tra tiep
+                        -- Ki?m tra 6 dòng ma pháp c?a item
+                        for i = 0, 5 do
+                            local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+                            if nMagicType == magicID and nValue >= minValue and nValue <= 600 then
+                                bFlag = bFlag + 1
+                                break
                             end
                         end
-                    end
-                else
-                    for i = 0, 5 do
-                        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                        if 600 >= nValue and tbThuocTinh[nMagicType] ~= nil and nValue >= tbThuocTinh[nMagicType] then
-                            bFlag = bFlag + 1
-                        end
-                    end
-                    if bFlag < gl_SoDongVip then
-                        nDoVip = 1
                     end
                 end
-                
-                if nDoVip == 0 then
-                   -- Ban do rac ngay
-                   ShopItem(nIndex)
-                   -- echo("Item khong phai VIP, ban do rac ngay. Index: " .. nIndex)
-                else
-                    -- Luu thong tin do VIP vao bang tam
-                    table.insert(tbVipItems, {
-                        nIndex = nIndex,
-                        nX = nXLocDo,
-                        nY = nYLocDo
-                    })
+
+                -- Quy?t ??nh VIP hay Rác
+                if bFlag >= targetAttrCount and targetAttrCount > 0 then
+                    table.insert(tbVipItems, {nIndex = nIndex, nX = nXLocDo, nY = nYLocDo})
                     nCountItemVip = nCountItemVip + 1
-                    --echo("Tim duoc item VIP: " .. szItemName .. " (Index: " .. nIndex .. ")")
+                    --echo("VIP: " .. szItemName)
+                else
+                    --ShopItem(nIndex)
+                    echo("Rac : " .. szItemName)
                 end
                 itemFiltered = itemFiltered + 1
             end
         end
         nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
     end
-    echo("Da loc xong " .. itemFiltered .. " item, tim duoc " .. nCountItemVip .. " VIP")
+    echo("Xong! Loc: " .. itemFiltered .. " - Giu: " .. nCountItemVip)
 end
