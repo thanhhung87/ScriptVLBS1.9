@@ -39,9 +39,7 @@ function ban_do()
             echo("Dang ban do lan: "..nCountSell)
             LocDoTheoType()
             if nCheckLimit == 0 then
-                -- if Item:UseByList() == 1 then
-                --     nCheckLimit = 1
-                -- end
+                --Item:UseByList()
                 Item:SellByList()
                 nCheckLimit = 1
             end
