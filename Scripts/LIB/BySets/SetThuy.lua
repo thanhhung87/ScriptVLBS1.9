@@ -8,7 +8,7 @@ ThemSetDoByType({
 -- Non Thuy Nu
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
-	[102] = 20, -- khang hoa
+	[102] = 25, -- khang hoa
 })
 
 --Ao Kim - Nu
