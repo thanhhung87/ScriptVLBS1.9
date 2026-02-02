@@ -223,7 +223,7 @@ function LocDoTheoType()
 			end
             if b_DoVip == false then
 				
-				--ShopItem(nIndex)
+				ShopItem(nIndex)
             else
 				local b_IsExit = false
 				for _, tbItem in pairs(tbVipItems) do
