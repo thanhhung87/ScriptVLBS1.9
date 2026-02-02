@@ -1,5 +1,5 @@
 
---thuy
+--set Tho -- nam -- He thuy
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
 	[102] = 10, -- khang hoa

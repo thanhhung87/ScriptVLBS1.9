@@ -22,6 +22,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
 	[102] = 25, -- khang hoa
+	[110] = 40, -- tg lam choang
 
 })
 --Tho
