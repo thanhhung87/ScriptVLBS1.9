@@ -142,7 +142,8 @@ function ThemSetDoByType(setConfig)
 		end
 	end
 end
-
+tbVipItems = {} -- Bang luu thong tin do VIP
+tbFilterItems = {} -- Bang luu thong tin do rac
 -- Ham loc do theo cac loai da dinh nghia trong tbSetDoByType
 -- Tu dong loc tat ca cac loai do da duoc them qua ThemSetDoByType
 function LocDoTheoType()
@@ -156,10 +157,8 @@ function LocDoTheoType()
 	end
 	timer.Sleep(gl_InternetDelay)
 
-    -- Buoc 1: Phan loai item - luu do VIP vao bang tam
-    local tbVipItems = {} -- Bang luu thong tin do VIP
     local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
-    
+    echoLine()
     while nIndex ~= 0 do
         local nGenre, nDetail, nParticular = item.GetKey(nIndex)
         local szItemName = item.GetName(nIndex)        
@@ -204,8 +203,6 @@ function LocDoTheoType()
 						end
 					end
 					if bFlag == nRequiredCount then
-						table.insert(tbVipItems, {nIndex = nIndex, nX = nXLocDo, nY = nYLocDo})
-						nCountItemVip = nCountItemVip + 1
 						b_DoVip = true
 						--echo("Tim thay do VIP: "..szItemName)
 						break						
@@ -213,15 +210,39 @@ function LocDoTheoType()
 				end
 
             end
+			local UniqueIDItem = Item:GetItemUniqueID(nIndex)
+			local b_IsExit = false
+			for _, tbItem in pairs(tbFilterItems) do
+				if tbItem.uniqueID == UniqueIDItem then
+					b_IsExit = true
+					break
+				end
+			end
+			if b_IsExit == false then
+				table.insert(tbFilterItems, {uniqueID = UniqueIDItem, name = szItemName})
+			end
             if b_DoVip == false then
-                --ShopItem(nIndex)
-                itemFiltered = itemFiltered + 1
+				
+				--ShopItem(nIndex)
             else
-				echo("Giu lai do VIP: "..szItemName)
-                itemFiltered = itemFiltered + 1
+				local b_IsExit = false
+				for _, tbItem in pairs(tbVipItems) do
+					if tbItem.uniqueID == UniqueIDItem then
+						b_IsExit = true
+						break
+					end
+				end
+				if b_IsExit == false then
+					
+					table.insert(tbVipItems, {uniqueID = UniqueIDItem, name = szItemName})
+				end
+				echoGreen("Giu VIP: "..szItemName)
             end
         end
         nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
     end
-    echo("Xong! Loc: " .. itemFiltered .. " - Giu: " .. nCountItemVip)
+	local itemCount = #tbVipItems
+	local racCount = #tbFilterItems
+    echo("Xong! Loc: " .. racCount .. " - Giu: " .. itemCount .. " VIP.")
+	echoLine()
 end

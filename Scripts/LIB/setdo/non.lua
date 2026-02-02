@@ -13,7 +13,7 @@ ThemSetDoByType({
 --moc - Nu
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
-	[103] = 20, -- khang loi
+	[103] = 25, -- khang loi
 })
 --Set Tho - Nam - He Tho
 ThemSetDoByType({

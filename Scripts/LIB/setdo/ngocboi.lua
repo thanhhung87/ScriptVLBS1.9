@@ -31,7 +31,7 @@ ThemSetDoByType({
 --Hoa -- nu
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nu,
-	[104] = 5, -- ptvl
+	[104] = 25, -- ptvl
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })

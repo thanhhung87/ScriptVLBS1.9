@@ -84,11 +84,30 @@ function Item:SellByList()
             if nPlace == 3 and szItemName == szItem then
                 echo("Selling item: " .. szItemName)        
                 ShopItem(nItemIndex)
-                return 1
             end
             nItemIndex, nPlace, nX, nY = item.GetNext()
         end
     end
     return 0
     
+end
+function Item:GetItemUniqueID(nIndex)
+    if not nIndex or nIndex == 0 then return nil end
+
+    local nGenre, nDetail, nParticular = item.GetKey(nIndex)
+    local nLevel = item.GetLevel(nIndex)
+    local nSeries = item.GetSeries(nIndex)
+    
+    -- Kh?i t?o chu?i g?c v?i thông tin c? b?n
+    local szRawData = string.format("%d_%d_%d_L%d_S%d", nGenre, nDetail, nParticular, nLevel, nSeries)
+    
+    -- L?y thông tin 6 dòng magic
+    for i = 0, 5 do
+        local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+        if nMagicType > 0 then
+            szRawData = szRawData .. string.format("_M%dV%d", nMagicType, nValue)
+        end
+    end
+    
+    return szRawData
 end
