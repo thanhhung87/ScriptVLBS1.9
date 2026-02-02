@@ -243,6 +243,9 @@ function LocDoTheoType()
     end
 	local itemCount = #tbVipItems
 	local racCount = #tbFilterItems
-    echo("Xong! Loc: " .. racCount .. " - Giu: " .. itemCount .. " VIP.")
+	for _, tbItem in pairs(tbVipItems) do
+		echoGreen("Da tim dc: "..tbItem.name)
+	end
+    echo("Xong! Loc: " .. racCount)
 	echoLine()
 end

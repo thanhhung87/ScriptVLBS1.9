@@ -3,24 +3,22 @@ szItemLib = szScriptFolder.."\\LIB\\Item.lua"
 IncludeFile(szItemLib)
 szLocItemLib = szScriptFolder.."\\LIB\\LocItem.lua"
 IncludeFile(szLocItemLib)
-szVk = szScriptFolder.."\\LIB\\setdo\\vukhi.lua"
+szVk = szScriptFolder.."\\LIB\\ByType\\vukhi.lua"
 IncludeFile(szVk)
-szNon = szScriptFolder.."\\LIB\\setdo\\non.lua"
-IncludeFile(szNon)
-szNgocBoi = szScriptFolder.."\\LIB\\setdo\\ngocboi.lua"
-IncludeFile(szNgocBoi)
-szAo = szScriptFolder.."\\LIB\\setdo\\ao.lua"
-IncludeFile(szAo)
-szGiay = szScriptFolder.."\\LIB\\setdo\\giay.lua"
-IncludeFile(szGiay)
-szNhan = szScriptFolder.."\\LIB\\setdo\\nhan.lua"
+szNhan = szScriptFolder.."\\LIB\\ByType\\nhan.lua"
 IncludeFile(szNhan)
-szDaiLung = szScriptFolder.."\\LIB\\setdo\\dailung.lua"
-IncludeFile(szDaiLung)
-szBaoTay = szScriptFolder.."\\LIB\\setdo\\baotay.lua"
-IncludeFile(szBaoTay)
-szDayChuyen = szScriptFolder.."\\LIB\\setdo\\daychuyen.lua"
-IncludeFile(szDayChuyen)
+
+zSetKim = szScriptFolder.."\\LIB\\BySets\\SetKim.lua"
+IncludeFile(zSetKim)
+zSetMoc = szScriptFolder.."\\LIB\\BySets\\SetMoc.lua"
+IncludeFile(zSetMoc)
+zSetThuy = szScriptFolder.."\\LIB\\BySets\\SetThuy.lua"
+IncludeFile(zSetThuy)
+zSetHoa = szScriptFolder.."\\LIB\\BySets\\SetHoa.lua"
+IncludeFile(zSetHoa)
+zSetTho = szScriptFolder.."\\LIB\\BySets\\SetTho.lua"
+IncludeFile(zSetTho)
+
 
 resetMenuDialog()
 TB_Map = {1,11,78,162,37,80,176,53,20,99,100,101,121,153,174}
