@@ -1,7 +1,7 @@
 --Set Hoa --nam -- Hoa
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[104] = 10, -- ptvl
+	[104] = 25, -- ptvl
 	-- [106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
 })
@@ -22,6 +22,6 @@ ThemSetDoByType({
 })
 --Thuy - Nu
 ThemSetDoByType({
-	itemType = tbType.Non.TatCa,
-	[102] = 15, -- khang hoa
+	itemType = tbType.Non.Nu,
+	[102] = 20, -- khang hoa
 })

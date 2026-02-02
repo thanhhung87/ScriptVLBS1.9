@@ -162,67 +162,62 @@ function LocDoTheoType()
     
     while nIndex ~= 0 do
         local nGenre, nDetail, nParticular = item.GetKey(nIndex)
-        local szItemName = item.GetName(nIndex)
-        local currentSetMatched = nil -- L?u set kh?p v?i item này
-
-        if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
-            -- B??c 1: Tìm xem item này thu?c Set nào trong tbSetDoByType
+        local szItemName = item.GetName(nIndex)        
+		if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
+			local b_DoVip = false
             for _, setDo in pairs(tbSetDoByType) do
+				local b_Type = false
                 if setDo.nDetail == nDetail then
                     local isParticularMatch = false
                     if setDo.nParticular == nil then
                         isParticularMatch = true
                     elseif type(setDo.nParticular) == "table" then
                         for _, pVal in pairs(setDo.nParticular) do
-                            if pVal == nParticular then isParticularMatch = true; break end
+                            if pVal == nParticular then 
+								isParticularMatch = true
+								break 
+							end
                         end
                     elseif setDo.nParticular == nParticular then
                         isParticularMatch = true
                     end
 
                     if isParticularMatch then
-                        currentSetMatched = setDo
-                        break 
+						b_Type = true
                     end
                 end
-            end
+				if b_Type == true then           
+					local bFlag = 0
+					local nRequiredCount = 0 
+					for magicID, minValue in pairs(setDo) do						
+						if type(magicID) == "number" then
+							--echo("Kiem tra magicID: "..magicID.." - minValue: "..minValue)
+							nRequiredCount = nRequiredCount + 1                       
+							for i = 0, 5 do
+								local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
+								--echo("Item name: "..szItemName.." So sanh voi magicType: "..nMagicType.." - value: "..nValue)
+								if nMagicType == magicID and nValue >= minValue then
+									bFlag = bFlag + 1
+									break
+								end
+							end
+						end
+					end
+					if bFlag == nRequiredCount then
+						table.insert(tbVipItems, {nIndex = nIndex, nX = nXLocDo, nY = nYLocDo})
+						nCountItemVip = nCountItemVip + 1
+						b_DoVip = true
+						--echo("Tim thay do VIP: "..szItemName)
+						break						
+					end
+				end
 
-            -- B??c 2: X? lý d?a trên vi?c có tìm th?y Set hay không
-            if currentSetMatched == nil then
-                -- Không thu?c lo?i c?n gi? -> Bán
+            end
+            if b_DoVip == false then
                 --ShopItem(nIndex)
                 itemFiltered = itemFiltered + 1
-				echo("Rac : " .. szItemName)
             else
-                -- Thu?c lo?i c?n l?c -> Ki?m tra thu?c tính ma pháp
-                local bFlag = 0
-                local targetAttrCount = 0
-                
-                -- Duy?t qua các thu?c tính c?n l?c trong Set
-                for magicID, minValue in pairs(currentSetMatched) do
-                    if type(magicID) == "number" then -- Ch? tính các ID thu?c tính (s?)
-                        targetAttrCount = targetAttrCount + 1
-                        
-                        -- Ki?m tra 6 dòng ma pháp c?a item
-                        for i = 0, 5 do
-                            local nMagicType, nValue = item.GetMagicAttrib(nIndex, i)
-                            if nMagicType == magicID and nValue >= minValue and nValue <= 600 then
-                                bFlag = bFlag + 1
-                                break
-                            end
-                        end
-                    end
-                end
-
-                -- Quy?t ??nh VIP hay Rác
-                if bFlag >= targetAttrCount and targetAttrCount > 0 then
-                    table.insert(tbVipItems, {nIndex = nIndex, nX = nXLocDo, nY = nYLocDo})
-                    nCountItemVip = nCountItemVip + 1
-                    --echo("VIP: " .. szItemName)
-                else
-                    --ShopItem(nIndex)
-                    echo("Rac : " .. szItemName)
-                end
+				echo("Giu lai do VIP: "..szItemName)
                 itemFiltered = itemFiltered + 1
             end
         end

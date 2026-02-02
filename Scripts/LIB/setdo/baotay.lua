@@ -15,7 +15,7 @@ ThemSetDoByType({
 --Tho -- Nam
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
-	[105] = 20, -- khang bang
+	[105] = 25, -- khang bang
 })
 --Tho --nu
 ThemSetDoByType({
