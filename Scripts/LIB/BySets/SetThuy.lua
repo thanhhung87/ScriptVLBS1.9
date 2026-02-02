@@ -68,6 +68,6 @@ ThemSetDoByType({
 -- Nhan Tho
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[105] = 15, -- khang bang
+	[105] = 25, -- khang bang
 
 })
