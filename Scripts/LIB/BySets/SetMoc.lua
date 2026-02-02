@@ -34,7 +34,8 @@ ThemSetDoByType({
 -- Non Moc Nu
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
-	[103] = 25, -- khang loi
+	[103] = 30, -- khang loi
+	[85] = 120, -- sinh luc
 })
 -- Ao 
 --thuy - nam
