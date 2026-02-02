@@ -1,6 +1,6 @@
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.TatCa,
-	[114] = 10, -- khang tat ca
+	[114] = 15, -- khang tat ca
 	--[104] = 5, -- ptvl
 })
 ThemSetDoByType({
@@ -18,6 +18,12 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
 	--[114] = 10, -- khang tat ca
+	[102] = 20, -- khang hoa
+	
+})
+ThemSetDoByType({
+	itemType = tbType.DayChuyen.Nam,
+	[114] = 10, -- khang tat ca
 	[102] = 5, -- khang hoa
 	
 })
@@ -28,17 +34,17 @@ ThemSetDoByType({
 	[102] = 5, -- khang hoa
 	
 })
---moc -- nam
+--Set Hoa -- nam - He Moc
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
-	--[114] = 10, -- khang tat ca
+	[114] = 20, -- khang tat ca
 	[103] = 5, -- khang loi
 	
 })
---Kim - nu
+--Set Thuy --Nu - He Kim
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nu,
-	--[114] = 10, -- khang tat ca
+	[114] = 10, -- khang tat ca
 	[101] = 5, -- khang doc
 	
 })

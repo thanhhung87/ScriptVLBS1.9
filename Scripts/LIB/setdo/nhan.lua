@@ -29,6 +29,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[103] = 25, -- khang loi
+	[135] = 1, -- may man %
 
 })
 --Tho
