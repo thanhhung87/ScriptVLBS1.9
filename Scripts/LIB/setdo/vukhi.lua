@@ -3,7 +3,7 @@ ThemSetDoByType({
 	[139] = 1, -- ky nang vong co
 	-- [116] = 20, -- toc do danh (noi cong)
 })
--- VD quyen
+--VD quyen
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
@@ -64,7 +64,7 @@ ThemSetDoByType({
     [115] = 20, -- toc do danh (ngoai cong)
 	[121] = 10, -- stvl diem (dong an)
 })
--- Nga my
+--Nga my
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)

@@ -7,7 +7,7 @@
 -- })
 --Set Tho -- Nam -He Kim
 ThemSetDoByType({
-	itemType = tbType.Giay.TatCa,
+	itemType = tbType.Giay.Nam,
     [111] = 40, -- toc do di chuyen
 	[101] = 25, -- khang doc
 })
@@ -31,7 +31,7 @@ ThemSetDoByType({
     [111] = 40, -- toc do di chuyen
 	[105] = 25, -- khang bang
 })
--- Moc -- nu
+--Set Thu --Nu - Moc
 ThemSetDoByType({
 	itemType = tbType.Giay.Nu,
     [111] = 20, -- toc do di chuyen

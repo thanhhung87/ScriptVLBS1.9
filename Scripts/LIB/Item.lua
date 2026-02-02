@@ -18,7 +18,14 @@ tbListItem_Sell = {
     "S¸t Thñ lÖnh",
     "Phï Dung Nguyªn Th¹ch",
     "Khæng T­íc Nguyªn Th¹ch",
-    "MËt ®å thÇn bÝ",
+    "MËt ®å thÇn bÝ ",
+    "Truy c«ng lÖnh",
+    "T©m T©m T­¬ng ¸nh phï ",
+    "HuyÒn Tinh Kho¸ng Th¹ch ",
+    "Chu Sa Nguyªn Kho¸ng",
+    "Phi Phong",
+    "Hoa hång",
+
 }
 function Item:UseByIndex(nIndex)
     local nItemIndex, nPlace, nX, nY = item.GetFirst()
