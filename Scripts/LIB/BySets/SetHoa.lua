@@ -22,7 +22,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	[113] = 40, -- thoi gian phuc hoi
-    [103] = 15, -- khang loi
+    [103] = 25, -- khang loi
 })
 -- Dai lung Thuy
 ThemSetDoByType({
