@@ -22,7 +22,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	[113] = 40, -- thoi gian phuc hoi
-    [103] = 5, -- khang loi
+    [103] = 15, -- khang loi
 })
 -- Dai lung Thuy
 ThemSetDoByType({
@@ -55,7 +55,7 @@ ThemSetDoByType({
 --- Ngoc Boi Kim Nam
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
-	[101] = 25, -- khang doc
+	[101] = 15, -- khang doc
 	-- [110] = 40, -- tg lam choang
 	-- [99] = 20, -- sinh khi
 })
@@ -73,6 +73,6 @@ ThemSetDoByType({
 --Nhan Thuy
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[102] = 15, -- khang hoa
+	[102] = 10, -- khang hoa
 	-- [110] = 40, -- tg lam choang
 })

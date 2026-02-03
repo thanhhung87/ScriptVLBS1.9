@@ -17,7 +17,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	[113] = 40, -- thoi gian phuc hoi
-    [104] = 5, -- ptvl
+    [104] = 15, -- ptvl
 }) 
 -- Dai Moc
 ThemSetDoByType({

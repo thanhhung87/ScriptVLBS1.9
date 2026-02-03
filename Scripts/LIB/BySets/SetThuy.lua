@@ -9,6 +9,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
 	[102] = 25, -- khang hoa
+	[110] = 40, -- tg lam choang
 })
 
 --Ao Kim - Nu
@@ -20,21 +21,21 @@ ThemSetDoByType({
 -- Dai lung Tho
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[105] = 10, -- khang bang
+	[105] = 25, -- khang bang
 
 })
 -- Giay Moc Nu
 ThemSetDoByType({
 	itemType = tbType.Giay.Nu,
-    [111] = 30, -- toc do di chuyen
-	[103] = 15, -- khang loi
+    [111] = 40, -- toc do di chuyen
+	[103] = 30, -- khang loi
 })
 
 -- Day Chuyen Kim Nu
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nu,
 	[114] = 10, -- khang tat ca
-	[101] = 5, -- khang doc
+	[101] = 15, -- khang doc
 	
 })
 

@@ -29,7 +29,7 @@ ThemSetDoByType({
 -- Non Moc Nam
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[103] = 20, -- khang loi
+	[103] = 25, -- khang loi
 })
 -- Non Moc Nu
 ThemSetDoByType({
@@ -59,7 +59,7 @@ ThemSetDoByType({
 --Hoa Nam
 ThemSetDoByType({
 	itemType = tbType.Giay.Nam,
-    [111] = 20, -- toc do di chuyen
+    [111] = 40, -- toc do di chuyen
 	[104] = 5, -- ptvl
 	
 })

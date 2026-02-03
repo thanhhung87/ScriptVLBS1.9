@@ -36,7 +36,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	[113] = 40, -- thoi gian phuc hoi
-    [105] = 5, -- khang bang
+    [105] = 10, -- khang bang
 })
 
 ThemSetDoByType({
@@ -61,23 +61,23 @@ ThemSetDoByType({
 	[102] = 5, -- khang hoa
 })
 -- Day Chuyen Tho
-ThemSetDoByType({
-	itemType = tbType.DayChuyen.Nam,
-	--[114] = 10, -- khang tat ca
-	[105] = 5, -- khang bang
+-- ThemSetDoByType({
+-- 	itemType = tbType.DayChuyen.Nam,
+-- 	--[114] = 10, -- khang tat ca
+-- 	[105] = 5, -- khang bang
 	
-})
+-- })
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
 	[114] = 10, -- khang tat ca
 	[105] = 5, -- khang bang
 	
 })
-ThemSetDoByType({
-	itemType = tbType.DayChuyen.Nu,
-	--[114] = 10, -- khang tat ca
-	[105] = 5, -- khang bang
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.DayChuyen.Nu,
+-- 	--[114] = 10, -- khang tat ca
+-- 	[105] = 5, -- khang bang
+-- })
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nu,
 	[114] = 10, -- khang tat ca

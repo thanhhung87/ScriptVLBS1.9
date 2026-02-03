@@ -2,7 +2,8 @@ szScriptFolder = system.GetScriptFolder()
 
 szChungLib = szScriptFolder.."\\LIB\\chung.lua"
 IncludeFile(szChungLib)
-
+szItemLib = szScriptFolder.."\\LIB\\Item.lua"
+IncludeFile(szItemLib)
 -- Include config file
 szConfig = szScriptFolder.."\\LIB\\00_config.lua"
 IncludeFile(szConfig)
@@ -162,7 +163,7 @@ function LocDoTheoType()
     while nIndex ~= 0 do
         local nGenre, nDetail, nParticular = item.GetKey(nIndex)
         local szItemName = item.GetName(nIndex)        
-		if nPlace == 3 and nGenre == 0 and IsHoangKimItem(nIndex) == false then
+		if nPlace == 3 and nGenre == 0 and Item:IsHoangKimItem(nIndex) == false then
 			local b_DoVip = false
             for _, setDo in pairs(tbSetDoByType) do
 				local b_Type = false

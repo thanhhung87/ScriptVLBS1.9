@@ -111,3 +111,21 @@ function Item:GetItemUniqueID(nIndex)
     
     return szRawData
 end
+Item.tbListNotSell = {11,12,13,14}
+Item.TB_HOANG_KIM_DETAIL = {}
+for _, nType in pairs(Item.tbListNotSell) do
+    Item.TB_HOANG_KIM_DETAIL[nType] = true
+end
+function Item:IsHoangKimItem(nIndex)
+    local nPrice = item.GetPrice(nIndex)
+
+    if nPrice >= 49999 then
+        return true
+    end
+    local nGenre, nDetail, nParticular = item.GetKey(nIndex)
+    if Item.TB_HOANG_KIM_DETAIL[nDetail] then
+        return true
+    end
+    
+    return false
+end
