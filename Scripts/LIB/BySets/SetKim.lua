@@ -20,6 +20,11 @@ ThemSetDoByType({
 	[115] = 20, -- toc do danh (ngoai cong)
 	[121] = 5, -- stvl diem (dong an)
 })
+ThemSetDoByType({
+	itemType = tbType.VuKhi,  -- Chi loc vk
+	[116] = 20, -- toc do danh (noi cong)
+	[168] = 40, -- stvl noi cong
+})
 
 -- 
 -- Non Kim
