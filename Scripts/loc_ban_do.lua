@@ -33,7 +33,7 @@ function ban_do()
     while true do
         local nCurMapID = map.GetID()
         -- Kiem tra xem co o trong map trong danh sach khong (O(1))
-        if player.IsFightMode() == 0 or TB_Map_Set[nCurMapID] then
+        if TB_Map_Set[nCurMapID] then
             echo("Dang ban do lan: "..nCountSell)
             LocDoTheoType()
             if nCheckLimit == 0 then
@@ -42,13 +42,13 @@ function ban_do()
                 nCheckLimit = 1
             end
             if nCountSell < 5 then 
-                timer.Sleep(200)
+                timer.Sleep(500)
             else
                 timer.Sleep(3000)
             end
             nCountSell = nCountSell + 1
         else
-            timer.Sleep(200)
+            timer.Sleep(500)
             if nCountSell ~= 0 then
                 nCountSell = 0
             end
