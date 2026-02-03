@@ -2,7 +2,7 @@
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
-	[171] = 120, -- loi sat noi cong
+	[171] = 60, -- loi sat noi cong
 })
 -- Non Tho
 ThemSetDoByType({
