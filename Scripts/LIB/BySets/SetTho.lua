@@ -8,9 +8,9 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
 	[105] = 25, -- khang bang
-	[108] = 40, -- tg trung doc
+	--[108] = 40, -- tg trung doc
 	[85] = 80, -- sinh luc
-	[134] = 5, -- chsttnl
+	[134] = 10, -- chsttnl
 
 })
 -- Ao Hoa
@@ -18,12 +18,14 @@ ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	[113] = 40, -- thoi gian phuc hoi
     [104] = 15, -- ptvl
+	--[134] = 5, -- chsttnl
 }) 
 -- Dai Moc
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
 	[103] = 30, -- khang loi
-	[134] = 10, -- chsttnl
+	[134] = 15, -- chsttnl
+	[85] = 120, -- sinh luc
 })
 -- Giay Kim
 ThemSetDoByType({
@@ -57,19 +59,20 @@ ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[139] = 1, -- ky nang von co
 })
-ThemSetDoByType({
-	itemType = tbType.Nhan.TatCa,
-	--[139] = 1, -- ky nang von co
-	[92] = 15, -- phuc hoi noi luc moi nua giay
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Nhan.TatCa,
+-- 	--[139] = 1, -- ky nang von co
+-- 	[92] = 15, -- phuc hoi noi luc moi nua giay
+-- })
 --Nhan Kim
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[101] = 20, -- khang doc
+	[101] = 10, -- khang doc
+	[92] = 15, -- phuc hoi noi luc moi nua giay
 })
 -- Nhan Moc
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[103] = 20, -- khang loi
-	[135] = 1, -- may man %
+	[103] = 10, -- khang loi
+	[92] = 15, -- phuc hoi noi luc moi nua giay
 })

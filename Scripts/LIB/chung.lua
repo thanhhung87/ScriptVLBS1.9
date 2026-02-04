@@ -941,12 +941,12 @@ tbThuocTinhName = {
 }
 
 
--- Start
-nFreeHanhTrang = 61
-echoLine()
-echo("Scripts 23/5/2023")
-echoGreen("ChØnh söa vµ tèi ­u bëi LVT Official.")
-echoGreen("YTB: https://www.youtube.com/@LVTOfficial")
-echoGreen("Sever: Congthanhchien.us")
+-- -- Start
+-- nFreeHanhTrang = 61
+-- echoLine()
+-- echo("Scripts 23/5/2023")
+-- echoGreen("ChØnh söa vµ tèi ­u bëi LVT Official.")
+-- echoGreen("YTB: https://www.youtube.com/@LVTOfficial")
+-- echoGreen("Sever: Congthanhchien.us")
 echo("Start script!")
--- End
+-- -- End

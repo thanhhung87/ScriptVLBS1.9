@@ -1,7 +1,7 @@
 szScriptFolder = system.GetScriptFolder()
 
-szChungLib = szScriptFolder.."\\LIB\\chung.lua"
-IncludeFile(szChungLib)
+-- szChungLib = szScriptFolder.."\\LIB\\chung.lua"
+-- IncludeFile(szChungLib)
 szItemLib = szScriptFolder.."\\LIB\\Item.lua"
 IncludeFile(szItemLib)
 -- Include config file
@@ -148,9 +148,10 @@ tbFilterItems = {} -- Bang luu thong tin do rac
 -- Ham loc do theo cac loai da dinh nghia trong tbSetDoByType
 -- Tu dong loc tat ca cac loai do da duoc them qua ThemSetDoByType
 function LocDoTheoType()
+	local b_result = false
 	if tbSetDoByType == nil or tablelength(tbSetDoByType) == 0 then
 		echo("Chua co set nao trong tbSetDoByType!")
-		return
+		return b_result
 	end
     	
     if gl_InternetDelay > 100 then
@@ -159,7 +160,6 @@ function LocDoTheoType()
 	timer.Sleep(gl_InternetDelay)
 
     local nIndex, nPlace, nXLocDo, nYLocDo = item.GetFirst()
-    echoLine()
     while nIndex ~= 0 do
         local nGenre, nDetail, nParticular = item.GetKey(nIndex)
         local szItemName = item.GetName(nIndex)        
@@ -237,16 +237,10 @@ function LocDoTheoType()
 					
 					table.insert(tbVipItems, {uniqueID = UniqueIDItem, name = szItemName})
 				end
-				echoGreen("Giu VIP: "..szItemName)
+				--echoGreen("Giu VIP: "..szItemName)
             end
         end
         nIndex, nPlace, nXLocDo, nYLocDo = item.GetNext()
     end
-	local itemCount = #tbVipItems
-	local racCount = #tbFilterItems
-	for _, tbItem in pairs(tbVipItems) do
-		echoGreen("Da tim dc: "..tbItem.name)
-	end
-    echo("Xong! Loc: " .. racCount)
-	echoLine()
+	return b_result
 end

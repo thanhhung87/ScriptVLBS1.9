@@ -2,7 +2,7 @@
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
-	[172] = 5,  -- doc sat noi cong
+	[172] = 40,  -- doc sat noi cong
 })
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Con,  -- Chi loc vk
@@ -29,7 +29,8 @@ ThemSetDoByType({
 -- Non Moc Nam
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[103] = 25, -- khang loi
+	[103] = 30, -- khang loi
+	[85] = 160, -- sinh luc
 })
 -- Non Moc Nu
 ThemSetDoByType({
@@ -42,7 +43,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Ao.Nam,
 	[113] = 40, -- thoi gian phuc hoi
-    [102] = 5, -- khang hoa
+    [102] = 25, -- khang hoa
 })
 --thuy - nu
 ThemSetDoByType({
@@ -53,17 +54,18 @@ ThemSetDoByType({
 -- Dai lung Kim
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[101] = 20, -- khang doc
+	[101] = 25, -- khang doc
+	[85] = 120, -- sinh luc
 })
--- Giay
---Hoa Nam
+-- Giay Hoa
+
 ThemSetDoByType({
 	itemType = tbType.Giay.Nam,
     [111] = 40, -- toc do di chuyen
-	[104] = 5, -- ptvl
+	[104] = 20, -- ptvl
 	
 })
---Hoa Nu
+
 ThemSetDoByType({
 	itemType = tbType.Giay.Nu,
     [111] = 40, -- toc do di chuyen

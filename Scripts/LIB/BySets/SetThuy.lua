@@ -22,6 +22,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
 	[105] = 25, -- khang bang
+	[85] = 200, -- sinh luc
 
 })
 -- Giay Moc Nu
@@ -42,8 +43,8 @@ ThemSetDoByType({
 --- Bao Tay Hoa Nu
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nu,
-	[104] = 20, -- ptvl
-	-- [106] = 40, -- tg lam cham
+	[104] = 25, -- ptvl
+	[106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
 })
 

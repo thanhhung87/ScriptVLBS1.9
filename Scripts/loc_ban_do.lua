@@ -1,13 +1,10 @@
 szScriptFolder = system.GetScriptFolder()
-szItemLib = szScriptFolder.."\\LIB\\Item.lua"
-IncludeFile(szItemLib)
 szLocItemLib = szScriptFolder.."\\LIB\\LocItem.lua"
 IncludeFile(szLocItemLib)
 szVk = szScriptFolder.."\\LIB\\ByType\\vukhi.lua"
 IncludeFile(szVk)
 szNhan = szScriptFolder.."\\LIB\\ByType\\nhan.lua"
 IncludeFile(szNhan)
-
 zSetKim = szScriptFolder.."\\LIB\\BySets\\SetKim.lua"
 IncludeFile(zSetKim)
 zSetMoc = szScriptFolder.."\\LIB\\BySets\\SetMoc.lua"
@@ -34,14 +31,28 @@ function ban_do()
         local nCurMapID = map.GetID()
         -- Kiem tra xem co o trong map trong danh sach khong (O(1))
         if TB_Map_Set[nCurMapID] then
-            echo("Dang ban do lan: "..nCountSell)
-            LocDoTheoType()
+            --echo("Dang ban do lan: "..nCountSell)
+            if nCountSell <= 3 then
+                resetMenuDialog()
+                LocDoTheoType()
+            end
+            if nCountSell == 4 then 
+                echoLine()
+                local itemCount = #tbVipItems
+                local racCount = #tbFilterItems
+                for _, tbItem in pairs(tbVipItems) do
+                    echoGreen("Da tim dc: "..tbItem.name)
+                end
+                echo("Xong! Da loc: " .. racCount .. " item")
+                echoLine()
+            end
+            
             if nCheckLimit == 0 then
                 --Item:UseByList()
                 Item:SellByList()
                 nCheckLimit = 1
             end
-            if nCountSell < 5 then 
+            if nCountSell < 4 then 
                 timer.Sleep(500)
             else
                 timer.Sleep(3000)

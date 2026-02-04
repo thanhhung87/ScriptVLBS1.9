@@ -35,12 +35,12 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Giay.Nam,
     [111] = 40, -- toc do di chuyen
-	[105] = 10, -- khang bang
+	[105] = 25, -- khang bang
 })
 -- Day Chuyen Moc Nam
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
-	[114] = 15, -- khang tat ca
+	[114] = 20, -- khang tat ca
 	[103] = 5, -- khang loi
 	
 })
