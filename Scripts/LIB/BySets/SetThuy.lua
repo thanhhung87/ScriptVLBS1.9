@@ -17,6 +17,7 @@ ThemSetDoByType({
 	itemType = tbType.Ao.Nu,
 	[113] = 40, -- thoi gian phuc hoi
     [101] = 25, -- khang doc
+	[85] = 160, -- sinh luc
 })
 -- Dai lung Tho
 ThemSetDoByType({

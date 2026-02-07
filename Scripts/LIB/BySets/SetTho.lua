@@ -8,9 +8,10 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
 	[105] = 25, -- khang bang
-	--[108] = 40, -- tg trung doc
-	--[85] = 80, -- sinh luc
+	[108] = 40, -- tg trung doc
+	[85] = 160, -- sinh luc
 	[134] = 10, -- chsttnl
+	[89] = 160, -- noi luc
 
 })
 -- Ao Hoa
