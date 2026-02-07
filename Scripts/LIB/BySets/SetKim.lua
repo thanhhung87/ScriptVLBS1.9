@@ -28,10 +28,20 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
-	[168] = 120, -- stvl noi cong
+	[168] = 160, -- stvl noi cong
 })
 
--- 
+-- non pk
+ThemSetDoByType({
+	itemType = tbType.Non.Nam,
+	[102] = 10, -- khang hoa
+	[110] = 40, -- tg lam choang
+})
+ThemSetDoByType({
+	itemType = tbType.Non.Nam,
+	[104] = 10, -- ptvl
+	[106] = 40, -- tg lam cham
+})
 -- Non Kim
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
@@ -59,7 +69,13 @@ ThemSetDoByType({
 -- Dai lung Hoa
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
+	[102] = 10, -- khang hoa
+	[110] = 40, -- tg lam choang
+})
+ThemSetDoByType({
+	itemType = tbType.DaiLung.TatCa,
 	[104] = 25, -- ptvl
+	[106] = 40, -- tg lam cham
 })
 -- Giay Thuy
 ThemSetDoByType({
@@ -99,7 +115,18 @@ ThemSetDoByType({
 	[105] = 20, -- khang bang
 })
 
- 
+--bao tay pk
+ThemSetDoByType({
+	itemType = tbType.BaoTay.Nam,
+	[102] = 10, -- khang hoa
+	[110] = 40, -- tg lam choang
+})
+ThemSetDoByType({
+	itemType = tbType.BaoTay.Nam,
+	[104] = 10, -- ptvl
+	[106] = 40, -- tg lam cham
+})
+
 --- Bao Tay Moc
 
 ThemSetDoByType({
@@ -114,7 +141,20 @@ ThemSetDoByType({
 	[85] = 160, -- sinh luc
 })
 
+--ngoc boi pk
+
+ThemSetDoByType({
+	itemType = tbType.NgocBoi.Nam,
+	[102] = 10, -- khang hoa
+	[110] = 40, -- tg lam choang
+})
+ThemSetDoByType({
+	itemType = tbType.NgocBoi.Nam,
+	[104] = 10, -- ptvl
+	[106] = 40, -- tg lam cham
+})
 --- Ngoc Boi Moc
+
 -- Nam
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
@@ -134,6 +174,11 @@ ThemSetDoByType({
 })
 --Nhan Thuy
 
+--TLD
+ThemSetDoByType({
+	itemType = tbType.Nhan.TatCa,
+	[102] = 25, -- khang hoa
+})
 --CLD
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
@@ -148,7 +193,13 @@ ThemSetDoByType({
 --CLD
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[104] = 5, -- ptvl
+	[102] = 10, -- khang hoa
+	[110] = 40, -- tg lam choang
+})
+ThemSetDoByType({
+	itemType = tbType.Nhan.TatCa,
+	[104] = 10, -- ptvl
+	[106] = 40, -- tg lam cham
 })
 --Thuy Yen
 ThemSetDoByType({
