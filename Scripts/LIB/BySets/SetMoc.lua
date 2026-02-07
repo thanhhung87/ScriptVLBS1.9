@@ -4,11 +4,7 @@ ThemSetDoByType({
 	[116] = 20, -- toc do danh (noi cong)
 	[172] = 40,  -- doc sat noi cong
 })
-ThemSetDoByType({
-	itemType = tbType.VuKhi.Con,  -- Chi loc vk
-	[115] = 20, -- toc do danh (ngoai cong)
-	[125] = 5, -- doc sat ngoai cong
-})
+
 ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao,  -- Chi loc vk
 	[115] = 20, -- toc do danh (ngoai cong)
