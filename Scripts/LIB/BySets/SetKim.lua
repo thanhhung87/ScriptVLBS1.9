@@ -34,12 +34,12 @@ ThemSetDoByType({
 -- non pk
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[102] = 10, -- khang hoa
+	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
 })
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
-	[104] = 10, -- ptvl
+	[104] = 25, -- ptvl
 	[106] = 40, -- tg lam cham
 })
 -- Non Kim
@@ -69,7 +69,7 @@ ThemSetDoByType({
 -- Dai lung Hoa
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
-	[102] = 10, -- khang hoa
+	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
 })
 ThemSetDoByType({
@@ -118,12 +118,12 @@ ThemSetDoByType({
 --bao tay pk
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
-	[102] = 10, -- khang hoa
+	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
 })
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
-	[104] = 10, -- ptvl
+	[104] = 25, -- ptvl
 	[106] = 40, -- tg lam cham
 })
 
