@@ -73,6 +73,7 @@ ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[105] = 25, -- khang bang
 	[85] = 160, -- sinh luc
+	[108] = 40, -- tg trung doc
 
 })
 --Nhan Thuy

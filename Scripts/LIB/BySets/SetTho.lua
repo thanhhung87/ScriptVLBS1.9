@@ -60,20 +60,15 @@ ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[139] = 1, -- ky nang von co
 })
--- ThemSetDoByType({
--- 	itemType = tbType.Nhan.TatCa,
--- 	--[139] = 1, -- ky nang von co
--- 	[92] = 15, -- phuc hoi noi luc moi nua giay
--- })
 --Nhan Kim
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[101] = 5, -- khang doc
+	[101] = 25, -- khang doc
 	[92] = 15, -- phuc hoi noi luc moi nua giay
 })
 -- Nhan Moc
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[103] = 5, -- khang loi
+	[103] = 30, -- khang loi
 	[92] = 15, -- phuc hoi noi luc moi nua giay
 })

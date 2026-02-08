@@ -46,7 +46,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Non.Nam,
 	[101] = 25, -- khang doc
-	[85] = 180, -- sinh luc
+	[85] = 200, -- sinh luc
 })
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
@@ -184,13 +184,9 @@ ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[102] = 25, -- khang hoa
 })
---Thuy Yen
-ThemSetDoByType({
-	itemType = tbType.Nhan.TatCa,
-	[102] = 5, -- khang hoa
-})
+
 -- Nhan Hoa 
---CLD
+--Pk
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[102] = 10, -- khang hoa

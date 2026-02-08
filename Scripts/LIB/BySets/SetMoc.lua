@@ -121,8 +121,8 @@ ThemSetDoByType({
 --hoa
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[104] = 20, -- ptvl
-	-- [106] = 40, -- tg lam cham
+	[104] = 25, -- ptvl
+	[106] = 40, -- tg lam cham
 })
 -- Kim
 ThemSetDoByType({

@@ -66,11 +66,12 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[103] = 30, -- khang loi
-	[135] = 1, -- may man %
+	[85] = 160, -- sinh luc
 })
 -- Nhan Tho
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[105] = 25, -- khang bang
 	[108] = 40, -- tg trung doc
+	[85] = 160, -- sinh luc
 })
