@@ -120,8 +120,8 @@ ThemSetDoByType({
 -- })
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nu,
-	[114] = 15, -- khang tat ca
-	[105] = 20, -- khang bang
+	[114] = 10, -- khang tat ca
+	[105] = 5, -- khang bang
 })
 
 --bao tay pk
