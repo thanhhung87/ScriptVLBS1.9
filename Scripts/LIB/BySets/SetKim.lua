@@ -53,7 +53,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
 	[101] = 25, -- khang doc
-	[85] = 200, -- sinh luc
+	--[85] = 200, -- sinh luc
 })
 -- Ao Tho 
 
@@ -66,7 +66,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Ao.Nu,
 	[113] = 40, -- thoi gian phuc hoi
-    [105] = 25, -- khang bang
+    [105] = 5, -- khang bang
 }) 
 -- Dai lung Hoa
 ThemSetDoByType({
@@ -90,9 +90,9 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Giay.Nu,
     [111] = 40, -- toc do di chuyen
-	[102] = 25, -- khang hoa
-	[110] = 40, -- tg lam choang
-	[85] = 120, -- sinh luc
+	[102] = 5, -- khang hoa
+	--[110] = 40, -- tg lam choang
+	--[85] = 120, -- sinh luc
 })
 -- Day Chuyen Tho
 -- ThemSetDoByType({
@@ -147,7 +147,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nu,
 	[103] = 30, -- khang loi
-	[85] = 160, -- sinh luc
+	--[85] = 160, -- sinh luc
 })
 
 --ngoc boi pk
@@ -174,7 +174,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nu,
 	[103] = 30, -- khang loi
-	[85] = 180, -- sinh luc
+	--[85] = 180, -- sinh luc
 })
 -- Nhan ----------
 ThemSetDoByType({
