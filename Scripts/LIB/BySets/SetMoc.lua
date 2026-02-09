@@ -5,21 +5,21 @@ ThemSetDoByType({
 	[172] = 40,  -- doc sat noi cong
 })
 
-ThemSetDoByType({
-	itemType = tbType.VuKhi.Dao,  -- Chi loc vk
-	[115] = 30, -- toc do danh (ngoai cong)
-	[125] = 5, -- doc sat ngoai cong
-})
-ThemSetDoByType({
-	itemType = tbType.VuKhi.PhiDao,  -- Chi loc vk
-	[115] = 30, -- toc do danh (ngoai cong)
-	[125] = 5, -- doc sat ngoai cong
-})
-ThemSetDoByType({
-	itemType = tbType.VuKhi.TuTien,  -- Chi loc vk
-	[115] = 30, -- toc do danh (ngoai cong)
-	[125] = 5, -- doc sat ngoai cong
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.VuKhi.Dao,  -- Chi loc vk
+-- 	[115] = 30, -- toc do danh (ngoai cong)
+-- 	[125] = 5, -- doc sat ngoai cong
+-- })
+-- ThemSetDoByType({
+-- 	itemType = tbType.VuKhi.PhiDao,  -- Chi loc vk
+-- 	[115] = 30, -- toc do danh (ngoai cong)
+-- 	[125] = 5, -- doc sat ngoai cong
+-- })
+-- ThemSetDoByType({
+-- 	itemType = tbType.VuKhi.TuTien,  -- Chi loc vk
+-- 	[115] = 30, -- toc do danh (ngoai cong)
+-- 	[125] = 5, -- doc sat ngoai cong
+-- })
 
 -- 
 -- Non Moc
@@ -106,7 +106,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
 	[105] = 25, -- khang bang
-	--[85] = 160, -- sinh luc
+	[85] = 160, -- sinh luc
 })
 
 -- ThemSetDoByType({
@@ -119,13 +119,14 @@ ThemSetDoByType({
 	[139] = 1, -- ky nang von co
 })
 --hoa
-ThemSetDoByType({
-	itemType = tbType.Nhan.TatCa,
-	[104] = 25, -- ptvl
-	[106] = 40, -- tg lam cham
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Nhan.TatCa,
+-- 	[104] = 25, -- ptvl
+-- 	[106] = 40, -- tg lam cham
+-- })
 -- Kim
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[101] = 25, -- khang doc
+	[85] = 160, -- sinh luc
 })

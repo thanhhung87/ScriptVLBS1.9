@@ -6,11 +6,11 @@ ThemSetDoByType({
 })
 
 -- Non Thuy Nu
-ThemSetDoByType({
-	itemType = tbType.Non.Nu,
-	[102] = 25, -- khang hoa
-	[110] = 40, -- tg lam choang
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Non.Nu,
+-- 	[102] = 25, -- khang hoa
+-- 	[110] = 40, -- tg lam choang
+-- })
 
 --Ao Kim - Nu
 ThemSetDoByType({

@@ -15,12 +15,12 @@ ThemSetDoByType({
 
 })
 -- Ao Hoa
-ThemSetDoByType({
-	itemType = tbType.Ao.Nam,
-	[113] = 40, -- thoi gian phuc hoi
-    [104] = 25, -- ptvl
-	--[134] = 5, -- chsttnl
-}) 
+-- ThemSetDoByType({
+-- 	itemType = tbType.Ao.Nam,
+-- 	[113] = 40, -- thoi gian phuc hoi
+--     [104] = 25, -- ptvl
+-- 	--[134] = 5, -- chsttnl
+-- }) 
 -- Dai Moc
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
@@ -42,6 +42,12 @@ ThemSetDoByType({
 	[104] = 5, -- ptvl
 	
 })
+ThemSetDoByType({
+	itemType = tbType.DayChuyen.Nam,
+	[114] = 15, -- khang tat ca
+	[103] = 15, -- khang loi
+	
+})
 --- Bao Tay Thuy
 ThemSetDoByType({
 	itemType = tbType.BaoTay.Nam,
@@ -50,35 +56,35 @@ ThemSetDoByType({
 })
 
 --- Ngoc Boi Thuy
-ThemSetDoByType({
-	itemType = tbType.NgocBoi.Nam,
-	[102] = 25, -- khang hoa
-	[92] = 10, -- phuc hoi noi luc moi nua giay
-})
-ThemSetDoByType({
-	itemType = tbType.NgocBoi.Nam,
-	--[102] = 25, -- khang hoa
-	[92] = 20, -- phuc hoi noi luc moi nua giay
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.NgocBoi.Nam,
+-- 	[102] = 25, -- khang hoa
+-- 	[92] = 10, -- phuc hoi noi luc moi nua giay
+-- })
+-- ThemSetDoByType({
+-- 	itemType = tbType.NgocBoi.Nam,
+-- 	--[102] = 25, -- khang hoa
+-- 	[92] = 20, -- phuc hoi noi luc moi nua giay
+-- })
 -- Nhan ----------
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[139] = 1, -- ky nang von co
 })
-ThemSetDoByType({
-	itemType = tbType.Nhan.TatCa,
-	--[101] = 25, -- khang doc
-	[92] = 20, -- phuc hoi noi luc moi nua giay
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Nhan.TatCa,
+-- 	--[101] = 25, -- khang doc
+-- 	[92] = 20, -- phuc hoi noi luc moi nua giay
+-- })
 --Nhan Kim
-ThemSetDoByType({
-	itemType = tbType.Nhan.TatCa,
-	[101] = 25, -- khang doc
-	[92] = 15, -- phuc hoi noi luc moi nua giay
-})
--- Nhan Moc
-ThemSetDoByType({
-	itemType = tbType.Nhan.TatCa,
-	[103] = 30, -- khang loi
-	[92] = 15, -- phuc hoi noi luc moi nua giay
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Nhan.TatCa,
+-- 	[101] = 25, -- khang doc
+-- 	[92] = 15, -- phuc hoi noi luc moi nua giay
+-- })
+-- -- Nhan Moc
+-- ThemSetDoByType({
+-- 	itemType = tbType.Nhan.TatCa,
+-- 	[103] = 30, -- khang loi
+-- 	[92] = 15, -- phuc hoi noi luc moi nua giay
+-- })
