@@ -9,8 +9,8 @@ zSetKim = szScriptFolder.."\\LIB\\BySets\\SetKim.lua"
 IncludeFile(zSetKim)
 zSetMoc = szScriptFolder.."\\LIB\\BySets\\SetMoc.lua"
 IncludeFile(zSetMoc)
-zSetThuy = szScriptFolder.."\\LIB\\BySets\\SetThuy.lua"
-IncludeFile(zSetThuy)
+--zSetThuy = szScriptFolder.."\\LIB\\BySets\\SetThuy.lua"
+--IncludeFile(zSetThuy)
 zSetHoa = szScriptFolder.."\\LIB\\BySets\\SetHoa.lua"
 IncludeFile(zSetHoa)
 zSetTho = szScriptFolder.."\\LIB\\BySets\\SetTho.lua"

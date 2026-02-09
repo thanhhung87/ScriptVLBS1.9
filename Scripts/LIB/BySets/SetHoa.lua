@@ -22,9 +22,9 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Non.Nu,
 	[104] = 25, -- ptvl
-	--[106] = 40, -- tg lam cham
+	[106] = 40, -- tg lam cham
 	-- [98] = 20, --than phap
-	--[85] = 160, -- sinh luc
+	[85] = 160, -- sinh luc
 })
 -- Ao Moc Nam
 ThemSetDoByType({
@@ -33,12 +33,12 @@ ThemSetDoByType({
     [103] = 30, -- khang loi
 	[85] = 160, -- sinh luc
 })
-ThemSetDoByType({
-	itemType = tbType.Ao.Nu,
-	[113] = 40, -- thoi gian phuc hoi
-    [103] = 5, -- khang loi
-	--[85] = 160, -- sinh luc
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Ao.Nu,
+-- 	[113] = 40, -- thoi gian phuc hoi
+--     [103] = 30, -- khang loi
+-- 	[85] = 160, -- sinh luc
+-- })
 -- Dai lung Thuy
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
@@ -54,12 +54,12 @@ ThemSetDoByType({
 	[105] = 25, -- khang bang
 	[85] = 200, -- sinh luc
 })
-ThemSetDoByType({
-	itemType = tbType.Giay.Nu,
-    [111] = 30, -- toc do di chuyen
-	[105] = 5, -- khang bang
-	--[85] = 200, -- sinh luc
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Giay.Nu,
+--     [111] = 30, -- toc do di chuyen
+-- 	[105] = 25, -- khang bang
+-- 	--[85] = 1, -- sinh luc
+-- })
 -- Day Chuyen Moc Nam
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
@@ -75,12 +75,12 @@ ThemSetDoByType({
 	[85] = 160, -- sinh luc
 	
 })
-ThemSetDoByType({
-	itemType = tbType.BaoTay.Nu,
-	[101] = 25, -- khang doc
-	--[85] = 160, -- sinh luc
+-- ThemSetDoByType({
+-- 	itemType = tbType.BaoTay.Nu,
+-- 	[101] = 25, -- khang doc
+-- 	--[85] = 160, -- sinh luc
 	
-})
+-- })
 
 --- Ngoc Boi Kim Nam
 ThemSetDoByType({
@@ -88,11 +88,11 @@ ThemSetDoByType({
 	[101] = 25, -- khang doc
 	[85] = 160, -- sinh luc
 })
-ThemSetDoByType({
-	itemType = tbType.NgocBoi.Nu,
-	[101] = 25, -- khang doc
-	--[85] = 160, -- sinh luc
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.NgocBoi.Nu,
+-- 	[101] = 25, -- khang doc
+-- 	--[85] = 160, -- sinh luc
+-- })
 -- Nhan ----------
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
@@ -110,6 +110,6 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[102] = 25, -- khang hoa
-	-- [110] = 40, -- tg lam choang
+	[110] = 40, -- tg lam choang
 	--[85] = 160, -- sinh luc
 })
