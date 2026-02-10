@@ -22,19 +22,19 @@ ThemSetDoByType({
 -- 	--[134] = 5, -- chsttnl
 -- }) 
 -- Dai Moc
-ThemSetDoByType({
-	itemType = tbType.DaiLung.TatCa,
-	[103] = 30, -- khang loi
-	[134] = 15, -- chsttnl
-	[85] = 160, -- sinh luc
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.DaiLung.TatCa,
+-- 	[103] = 30, -- khang loi
+-- 	[134] = 15, -- chsttnl
+-- 	[85] = 160, -- sinh luc
+-- })
 -- Giay Kim
-ThemSetDoByType({
-	itemType = tbType.Giay.Nam,
-    [111] = 40, -- toc do di chuyen
-	[101] = 25, -- khang doc
-	[85] = 160, -- sinh luc
-})
+-- ThemSetDoByType({
+-- 	itemType = tbType.Giay.Nam,
+--     [111] = 40, -- toc do di chuyen
+-- 	[101] = 25, -- khang doc
+-- 	[85] = 160, -- sinh luc
+-- })
 -- Day Chuyen Hoa
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.Nam,
