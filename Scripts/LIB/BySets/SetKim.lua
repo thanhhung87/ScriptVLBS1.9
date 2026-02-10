@@ -90,7 +90,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Giay.Nu,
     [111] = 40, -- toc do di chuyen
-	[102] = 5, -- khang hoa
+	[102] = 25, -- khang hoa
 	--[110] = 40, -- tg lam choang
 	--[85] = 120, -- sinh luc
 })
@@ -168,7 +168,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.Nam,
 	[103] = 30, -- khang loi
-	[85] = 180, -- sinh luc
+	--[85] = 180, -- sinh luc
 })
 -- Nu
 ThemSetDoByType({
