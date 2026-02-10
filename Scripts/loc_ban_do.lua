@@ -15,7 +15,8 @@ zSetHoa = szScriptFolder.."\\LIB\\BySets\\SetHoa.lua"
 IncludeFile(zSetHoa)
 zSetTho = szScriptFolder.."\\LIB\\BySets\\SetTho.lua"
 IncludeFile(zSetTho)
-
+zSetNgamy= szScriptFolder.."\\LIB\\BySets\\SetNgamy.lua"
+IncludeFile(zSetNgamy)
 
 resetMenuDialog()
 TB_Map = {1,11,78,162,37,80,176,53,20,99,100,101,121,153,174}
