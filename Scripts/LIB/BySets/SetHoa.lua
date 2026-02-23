@@ -51,8 +51,8 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.Giay.Nam,
     [111] = 40, -- toc do di chuyen
-	[105] = 25, -- khang bang
-	[85] = 200, -- sinh luc
+	[105] = 5, -- khang bang
+	--[85] = 200, -- sinh luc
 })
 -- ThemSetDoByType({
 -- 	itemType = tbType.Giay.Nu,

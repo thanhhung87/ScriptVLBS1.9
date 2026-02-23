@@ -7,14 +7,14 @@ szNhan = szScriptFolder.."\\LIB\\ByType\\nhan.lua"
 IncludeFile(szNhan)
 zSetKim = szScriptFolder.."\\LIB\\BySets\\SetKim.lua"
 IncludeFile(zSetKim)
-zSetMoc = szScriptFolder.."\\LIB\\BySets\\SetMoc.lua"
-IncludeFile(zSetMoc)
+-- zSetMoc = szScriptFolder.."\\LIB\\BySets\\SetMoc.lua"
+-- IncludeFile(zSetMoc)
 --zSetThuy = szScriptFolder.."\\LIB\\BySets\\SetThuy.lua"
 --IncludeFile(zSetThuy)
-zSetHoa = szScriptFolder.."\\LIB\\BySets\\SetHoa.lua"
-IncludeFile(zSetHoa)
-zSetTho = szScriptFolder.."\\LIB\\BySets\\SetTho.lua"
-IncludeFile(zSetTho)
+-- zSetHoa = szScriptFolder.."\\LIB\\BySets\\SetHoa.lua"
+-- IncludeFile(zSetHoa)
+-- zSetTho = szScriptFolder.."\\LIB\\BySets\\SetTho.lua"
+-- IncludeFile(zSetTho)
 -- zSetNgamy= szScriptFolder.."\\LIB\\BySets\\SetNgamy.lua"
 -- IncludeFile(zSetNgamy)
 
