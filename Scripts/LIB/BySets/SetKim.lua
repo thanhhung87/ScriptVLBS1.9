@@ -11,10 +11,21 @@ ThemSetDoByType({
 	[121] = 40, -- stvl diem (dong an)
 })
 ThemSetDoByType({
+	itemType = tbType.VuKhi.Kiem,  -- Chi loc vk
+	[115] = 30, -- toc do danh (ngoai cong)
+	[125] = 40, -- doc sat ngoai cong
+})
+ThemSetDoByType({
 	itemType = tbType.VuKhi.Dao,  -- Chi loc vk
 	[115] = 30, -- toc do danh (ngoai cong)
 	[121] = 40, -- stvl diem (dong an)
 })
+ThemSetDoByType({
+	itemType = tbType.VuKhi.Dao,  -- Chi loc vk
+	[115] = 30, -- toc do danh (ngoai cong)
+	[125] = 40, -- doc sat ngoai cong
+})
+
 ThemSetDoByType({
 	itemType = tbType.VuKhi.PhiDao,  -- Chi loc vk
 	[115] = 30, -- toc do danh (ngoai cong)
@@ -26,6 +37,11 @@ ThemSetDoByType({
 	[121] = 40, -- stvl diem (dong an)
 })
 ThemSetDoByType({
+	itemType = tbType.VuKhi.TuTien,  -- Chi loc vk
+	[115] = 30, -- toc do danh (ngoai cong)
+	[125] = 40, -- doc sat ngoai cong
+})
+ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
 	[172] = 50,  -- doc sat noi cong
@@ -33,7 +49,12 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.VuKhi,  -- Chi loc vk
 	[116] = 20, -- toc do danh (noi cong)
-	[172] = 50,  -- doc sat noi cong
+	[170] = 180, -- hoa sat noi cong
+})
+ThemSetDoByType({
+	itemType = tbType.VuKhi,  -- Chi loc vk
+	[116] = 20, -- toc do danh (noi cong)
+	[171] = 180, -- loi sat noi cong
 })
 
 -- non pk
@@ -55,19 +76,34 @@ ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
 	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
+	[85] = 160, -- sinh luc
 })
 ThemSetDoByType({
 	itemType = tbType.DaiLung.TatCa,
 	[104] = 25, -- ptvl
 	[106] = 40, -- tg lam cham
-	--[85] = 180, -- sinh luc
+	[85] = 160, -- sinh luc
 })
 
 ThemSetDoByType({
 	itemType = tbType.DayChuyen.TatCa,
 	[114] = 20, -- khang tat ca
-	--[105] = 20, -- khang bang
-	
+	[102] = 25, -- khang hoa
+})
+ThemSetDoByType({
+	itemType = tbType.DayChuyen.TatCa,
+	[114] = 20, -- khang tat ca
+	[104] = 25, -- ptvl
+})
+ThemSetDoByType({
+	itemType = tbType.DayChuyen.TatCa,
+	[114] = 20, -- khang tat ca
+	[103] = 30, -- khang loi
+})
+ThemSetDoByType({
+	itemType = tbType.DayChuyen.TatCa,
+	[114] = 20, -- khang tat ca
+	[105] = 25, -- khang bang
 })
 
 
@@ -76,11 +112,13 @@ ThemSetDoByType({
 	itemType = tbType.BaoTay.TatCa,
 	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
+	[85] = 160, -- sinh luc
 })
 ThemSetDoByType({
 	itemType = tbType.BaoTay.TatCa,
 	[104] = 25, -- ptvl
 	[106] = 40, -- tg lam cham
+	[85] = 160, -- sinh luc
 })
 
 
@@ -88,13 +126,15 @@ ThemSetDoByType({
 
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.TatCa,
-	[102] = 15, -- khang hoa
+	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
+	[85] = 160, -- sinh luc
 })
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.TatCa,
-	[104] = 15, -- ptvl
+	[104] = 25, -- ptvl
 	[106] = 40, -- tg lam cham
+	[85] = 160, -- sinh luc
 })
 --- Ngoc Boi khang loi
 
@@ -102,7 +142,7 @@ ThemSetDoByType({
 ThemSetDoByType({
 	itemType = tbType.NgocBoi.TatCa,
 	[103] = 30, -- khang loi
-	--[85] = 180, -- sinh luc
+	[85] = 160, -- sinh luc
 })
 
 -- Nhan ----------
@@ -114,15 +154,18 @@ ThemSetDoByType({
 --Pk
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[102] = 15, -- khang hoa
+	[102] = 25, -- khang hoa
 	[110] = 40, -- tg lam choang
+	[85] = 160, -- sinh luc
 })
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
-	[104] = 15, -- ptvl
+	[104] = 25, -- ptvl
 	[106] = 40, -- tg lam cham
+	[85] = 160, -- sinh luc
 })
 ThemSetDoByType({
 	itemType = tbType.Nhan.TatCa,
 	[103] = 30, -- khang loi
+	[85] = 160, -- sinh luc
 })
